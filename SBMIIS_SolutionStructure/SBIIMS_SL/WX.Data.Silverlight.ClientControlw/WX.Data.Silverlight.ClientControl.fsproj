@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5172d536-e9fb-4090-a708-97f81b55457e}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WX.Data.View.ResourcesHelper</RootNamespace>
+    <AssemblyName>WX.Data.Silverlight.ClientControl</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <Name>WX.Data.Silverlight.ClientControl</Name>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>D:\Workspace\SBIIMS2010\WX.Data.Integration\WX.Data.Client\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>bin\Release\WX.Data.View.ResourcesHelper.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FSharp.PowerPack">
+      <HintPath>..\..\SBIIMS_Assemblies\ClientDebug\FSharp.PowerPack.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.PowerPack.Parallel.Seq">
+      <HintPath>C:\Program Files (x86)\FSharpPowerPack-2.0.0.0\bin\FSharp.PowerPack.Parallel.Seq.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="FSharp.Core" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WX.Data.AssemblyLoader\WX.Data.AssemblyLoader.csproj">
+      <Name>WX.Data.AssemblyLoader</Name>
+      <Project>{d32e1576-61fc-4982-bd11-969d3af5ee72}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WX.Data.CClientHelper\WX.Data.CClientHelper.csproj">
+      <Name>WX.Data.CClientHelper</Name>
+      <Project>{3771060d-797f-4078-9284-a2ec708e0dbc}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WX.Data.ClientHelper\WX.Data.ClientHelper.fsproj">
+      <Name>WX.Data.ClientHelper</Name>
+      <Project>{b55b4360-8b1f-441b-92ac-1d3f39ed64c4}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WX.Data.ClientPreparing\WX.Data.ClientPreparing.fsproj">
+      <Name>WX.Data.ClientPreparing</Name>
+      <Project>{57911f76-9157-4d59-9664-31be7592cb87}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WX.Data.CViewModelBase\WX.Data.CViewModelBase.csproj">
+      <Name>WX.Data.CViewModelBase</Name>
+      <Project>{ec5898e2-13c5-49ae-9705-6dea6c5979d7}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WX.Data.FAssemblyLoader\WX.Data.FAssemblyLoader.fsproj">
+      <Name>WX.Data.FAssemblyLoader</Name>
+      <Project>{a386ff78-66ba-4800-bf08-ffc0a6fe8940}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WX.Data.FModule\WX.Data.FModule.fsproj">
+      <Name>WX.Data.FModule</Name>
+      <Project>{067a0012-f02f-4a7a-a046-60941c818754}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WX.Data.ServerPreparing\WX.Data.ServerPreparing.fsproj">
+      <Name>WX.Data.ServerPreparing</Name>
+      <Project>{bc9a66d1-1e40-427a-8ddb-f75ccdf0ca83}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
+  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	     Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

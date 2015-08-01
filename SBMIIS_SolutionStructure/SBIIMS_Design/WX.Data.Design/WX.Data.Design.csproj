@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{09A342C3-D71C-4F23-A767-84B48DCF4081}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WX.Data.Design</RootNamespace>
+    <AssemblyName>WX.Data.Design</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+
+    <Content Include="CodeSnippet\For Entity Framework\BatchMainChildTableOperation.txt" />
+    <Content Include="CodeSnippet\For Entity Framework\ForDesignOptions.txt" />
+    <Content Include="CodeSnippet\For Entity Framework\ForEdmGen.txt" />
+    <Content Include="CodeSnippet\For Entity Framework\ForEntityDesign.txt" />
+    <Content Include="CodeSnippet\For Entity Framework\Issues.txt" />
+    <Content Include="CodeSnippet\For FSharp\For Closures.txt" />
+    <Content Include="CodeSnippet\For FSharp\For Entity Framework\EntityFrameworkWithFSharp3.0.txt" />
+    <Content Include="CodeSnippet\For FSharp\For Interactive\ForConfig.txt" />
+    <Content Include="CodeSnippet\For FSharp\For Interactive\ForInteractiveSession.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForDataProcess\ForAdvancedDataProcessReference.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForDynamic.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForDynamicCompile\DynamicCompileCode.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForFSharpVersion\ForVersionConflict.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForLanguageKeyword.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForList.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForModule\ForCSharpReferFromModule.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForOverride.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForSeq.fold.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForSeq.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForSeq\ForSeqPick.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForSeq{}Pattern.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForSet.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForSQLDataQuery\ForSQLQuery.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForWCF\ForDataContracts.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForWeb\ClockSample.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForWindowPageFrame.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForWindowsService.txt" />
+    <Content Include="CodeSnippet\For FSharp\Fsharp Language Bug.txt" />
+    <Content Include="CodeSnippet\For FSharp\ReactivePatternExtension.txt" />
+    <Content Include="CodeSnippet\For Network Login API\MsnMailApi.txt" />
+    <Content Include="CodeSnippet\For Network Login API\QQLoginApi.txt" />
+    <Content Include="CodeSnippet\For WCF\EndpointConfiguration.txt" />
+    <Content Include="CodeSnippet\For WCF\ServiceConfiguration.txt" />
+    <Content Include="CodeSnippet\ForUnderlyingTechnology\Inter-application communication.txt" />
+    <Content Include="CodeSnippet\ForUnderlyingTechnology\Inter-process communication.txt" />
+    <Content Include="CodeSnippet\ForWPF\Binding\EditCancel EndEdit ExplicitlyUpdating.txt" />
+    <Content Include="CodeSnippet\ForWPF\Binding\Get Bidning Path.txt" />
+    <Content Include="CodeSnippet\ForWPF\Binding\Source vs Relative Binding.txt" />
+    <Content Include="CodeSnippet\ForWPF\CodeXAML\Code for xaml Controls.txt" />
+    <Content Include="CodeSnippet\ForWPF\Command\Built Command.txt" />
+    <Content Include="CodeSnippet\ForWPF\Command\CommandHelper Class.txt" />
+    <Content Include="CodeSnippet\ForWPF\Control\Control named.txt" />
+    <Content Include="CodeSnippet\ForWPF\Control\Drag and Drop.txt" />
+    <Content Include="CodeSnippet\ForWPF\Control\TextBlock VS Label.txt" />
+    <Content Include="CodeSnippet\ForWPF\Data Resources\DataResources.txt" />
+    <Content Include="CodeSnippet\Enterprise Library\Cache.txt" />
+    <Content Include="CodeSnippet\Enterprise Library\ConfigurationIssues.txt" />
+    <Content Include="CodeSnippet\Enterprise Library\Enterprise Library Policy Injection Application Block.txt" />
+    <Content Include="CodeSnippet\Enterprise Library\Navigations.txt" />
+    <Content Include="CodeSnippet\Enterprise Library\Security.txt" />
+    <Content Include="CodeSnippet\For ClickOnce.txt" />
+    <Content Include="CodeSnippet\For CSharp Features\CSharp3Features.txt" />
+    <Content Include="CodeSnippet\For CSharp Features\CSharp4Features.txt" />
+    <Content Include="CodeSnippet\For CSharp Features\For Silverlight.txt" />
+    <Content Include="CodeSnippet\For CSharp Features\Key.txt" />
+    <Content Include="CodeSnippet\For CSharp Features\Reflection.txt" />
+    <Content Include="CodeSnippet\For CSharp Features\Research website.txt" />
+    <Content Include="CodeSnippet\For CSharp Features\Sql Store Procedure.txt" />
+    <Content Include="CodeSnippet\ForWPF\For Debug Error\Project of WPF Debug Error.txt" />
+    <Content Include="CodeSnippet\For Entity Framework\Change Relationships Between Objects .txt" />
+    <Content Include="CodeSnippet\For Entity Framework\ConnectionString.txt" />
+    <Content Include="CodeSnippet\For Entity Framework\Defining Business Logic %28Entity Framework%29.txt" />
+    <Content Include="CodeSnippet\For Entity Framework\For CompiledQuery.Compile.txt" />
+    <Content Include="CodeSnippet\For Entity Framework\ForAddModifyDelete.txt" />
+    <Content Include="CodeSnippet\For Entity Framework\ForApplyCurrentValues.txt" />
+    <Content Include="CodeSnippet\For Entity Framework\ForConnection.txt" />
+    <Content Include="CodeSnippet\For Entity Framework\ForCreate.txt" />
+    <Content Include="CodeSnippet\For Entity Framework\ForGetObjectByKey_SinglePerformance.txt" />
+    <Content Include="CodeSnippet\For Entity Framework\ForObjectStateManager.txt" />
+    <Content Include="CodeSnippet\For Entity Framework\ForTablesMapping.txt" />
+    <Content Include="CodeSnippet\For Entity Framework\ForTransaction.txt" />
+    <Content Include="CodeSnippet\For Entity Framework\PerformanceOptimize.txt" />
+    <Content Include="CodeSnippet\For FSharp\Console.txt" />
+    <Content Include="CodeSnippet\For FSharp\For Async and Event.txt" />
+    <Content Include="CodeSnippet\For FSharp\For Async.txt" />
+    <Content Include="CodeSnippet\For FSharp\For Fsharp Script.txt" />
+    <Content Include="CodeSnippet\For FSharp\For ICloneable.txt" />
+    <Content Include="CodeSnippet\For FSharp\For IEqualityComarer.txt" />
+    <Content Include="CodeSnippet\For FSharp\For ObservableCollection.txt" />
+    <Content Include="CodeSnippet\For FSharp\For Quotation.txt" />
+    <Content Include="CodeSnippet\For FSharp\For Record Type.txt" />
+    <Content Include="CodeSnippet\For FSharp\For WPF.txt" />
+    <Content Include="CodeSnippet\For FSharp\For XNA\For XNA Basic.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForAccess.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForAdoEntityFramework.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForArray.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForAssembly.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForBoxUnbox.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForBreakContinue.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForByte.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForClone.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForCommonFunctions.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForComputaionExpressions.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForDbTypeAndSqlDbType.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForDuckType.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForEvent.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForFun.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForInline_Operator.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForIO.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForLazy.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForLinq.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForLinqExpressions.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForList\ForList.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForMailProcess.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForMeasureUnits.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForMVVM.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForNull.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForObservable.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForOffice.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForOverload.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForParallel.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForPipeline.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForQuotation.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForRec.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForReferenceWebsite.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForReflect.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForRefVariable.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForRegex.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForSeq\ForSeq.fold.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForSeq\ForSeq.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForSeq\ForSeq{}Pattern.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForSet\ForSet.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForString.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForStringFormat.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForSystemCollectionsGenericIEnumerable.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForSystemCollectionsGenericIEnumerator.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForSystemCollectionsGenericList.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForThread\AsyncThread.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForTry.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForTuple.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForType.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForTypeConstrain.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForUnionType.txt" />
+    <Content Include="CodeSnippet\For FSharp\ForWCF\ForWCF .txt" />
+    <Content Include="CodeSnippet\For FSharp\Fsharp for Silverlight2.0.txt" />
+    <Content Include="CodeSnippet\For FSharp\Fsharp for sql linq.txt" />
+    <Content Include="CodeSnippet\For FSharp\FSharp object.txt" />
+    <Content Include="CodeSnippet\For FSharp\FsharpQuotationForEntityFramework.txt" />
+    <Content Include="CodeSnippet\For FSharp\ObjectExpression.txt" />
+    <Content Include="CodeSnippet\For FSharp\Operate on Windows.txt" />
+    <Content Include="CodeSnippet\For FSharp\Some.txt" />
+    <Content Include="CodeSnippet\For FSharp\SuanFaSample\MathSuanFa.txt" />
+    <Content Include="CodeSnippet\For FSharp\Type Extension.txt" />
+    <Content Include="CodeSnippet\ForWPF\For Storyboard\BooleanAnimationUsingKeyFrames.txt" />
+    <Content Include="CodeSnippet\For WCF\Async.txt" />
+    <Content Include="CodeSnippet\For WCF\WCF常见错误.txt" />
+    <Content Include="CodeSnippet\ForWPF\ForValidation\Adorner layer Re-render Problem.txt" />
+    <Content Include="CodeSnippet\ForWPF\ForValidation\Validation\Validation Sample.txt" />
+    <Content Include="CodeSnippet\ForAppDomain\Assembly Loading Across AppDomain.txt" />
+    <Content Include="CodeSnippet\ForDatabase\For 内存表.txt" />
+    <Content Include="CodeSnippet\ForIO\Barcode scanner.txt" />
+    <Content Include="CodeSnippet\ForMicrosoftEnterpriseLibrary\ForConfigeFile Internal and Externa.txt" />
+    <Content Include="CodeSnippet\Report and Chart\For Conversion rdlc_rdl.txt" />
+    <Content Include="CodeSnippet\Report and Chart\For use with Microsoft Chart.txt" />
+    <Content Include="CodeSnippet\Report and Chart\For Use with Microsoft ReportViewer.txt" />
+    <Content Include="CodeSnippet\Report and Chart\ForReportBuilder.txt" />
+    <Content Include="CodeSnippet\Report and Chart\WPF Report and Chart.txt" />
+    <Content Include="CodeSnippet\ForWPF\Resource\Resource Uri and Path.txt" />
+    <Content Include="CodeSnippet\ForWPF\Resource\Use External dll Resource.txt" />
+    <Content Include="CodeSnippet\ForWPF\Resource\Use with Assembly Resource.txt" />
+    <Content Include="CodeSnippet\ForWPF\Style\Event in Style.txt" />
+    <Content Include="CodeSnippet\ForWPF\Style\Trigger in Style.txt" />
+    <Content Include="CodeSnippet\ForWPF\Window\Value Transfer between UserControls pages.txt" />
+
+
+
+    <Content Include="FSharp色块化代码.txt" />
+
+
+    <Content Include="TableSchemal.xml">
+      <SubType>Designer</SubType>
+    </Content>
+
+    <Content Include="使用过的正则表达式.txt" />
+    <Content Include="技术专业人士Blog.txt" />
+    <Content Include="进销存参考资源.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SBIIMS Data Dictionary.xlsx" />
+    <None Include="店面销售系统2010 2011-05-27.vsd" />
+    <None Include="店面销售系统2010.vsd" />
+  </ItemGroup>
+  <ItemGroup>
+
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

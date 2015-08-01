@@ -1,0 +1,135 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WX.Data.BusinessDataEntities.VC", "WX.Data.BusinessDataEntities.VC\WX.Data.BusinessDataEntities.VC.fsproj", "{6F99C1B3-CC00-4B92-BBB9-AC0DD83EF16D}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WX.Data.BusinessLogic.VC", "WX.Data.BusinessLogic.VC\WX.Data.BusinessLogic.VC.fsproj", "{6B8138B2-FE54-4771-BB38-BB67EE4A4164}"
+	ProjectSection(ProjectDependencies) = postProject
+		{20FAEC20-ED9D-4908-86FE-372FC68F2064} = {20FAEC20-ED9D-4908-86FE-372FC68F2064}
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WX.Data.BusinessQueryEntities.VC", "WX.Data.BusinessQueryEntities.VC\WX.Data.BusinessQueryEntities.VC.fsproj", "{9DE5955B-B87F-4976-96A5-1BAC1C9CA771}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WX.Data.BusinessQueryEntitiesClient.VC", "WX.Data.BusinessQueryEntitiesClient.VC\WX.Data.BusinessQueryEntitiesClient.VC.fsproj", "{D9B2E99C-62C4-422C-89B6-28A3F3AD136D}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WX.Data.ClientChannel.FromAzure.VC", "WX.Data.ClientChannel.FromAzure.VC\WX.Data.ClientChannel.FromAzure.VC.fsproj", "{1EF5DC37-4A53-411D-AC18-73BDD1D84D12}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CB6C0380-BBE4-4B48-9BBF-288D9758FB90} = {CB6C0380-BBE4-4B48-9BBF-288D9758FB90}
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WX.Data.ClientChannel.FromNative.VC", "WX.Data.ClientChannel.FromNative.VC\WX.Data.ClientChannel.FromNative.VC.fsproj", "{94F15D3F-0843-4FA2-86C4-45ED2C3B756C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6B8138B2-FE54-4771-BB38-BB67EE4A4164} = {6B8138B2-FE54-4771-BB38-BB67EE4A4164}
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WX.Data.ClientChannel.FromServer.VC", "WX.Data.ClientChannel.FromServer.VC\WX.Data.ClientChannel.FromServer.VC.fsproj", "{7BBF3D6C-192E-4104-9A42-D63A3887D1A1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CB6C0380-BBE4-4B48-9BBF-288D9758FB90} = {CB6C0380-BBE4-4B48-9BBF-288D9758FB90}
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WX.Data.ClientChannel.VC", "WX.Data.ClientChannel.VC\WX.Data.ClientChannel.VC.fsproj", "{F54745F5-DAAB-45D7-8AE6-C808C4C36F37}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6B8138B2-FE54-4771-BB38-BB67EE4A4164} = {6B8138B2-FE54-4771-BB38-BB67EE4A4164}
+		{CB6C0380-BBE4-4B48-9BBF-288D9758FB90} = {CB6C0380-BBE4-4B48-9BBF-288D9758FB90}
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WX.Data.DataAccess.VC", "WX.Data.DataAccess.VC\WX.Data.DataAccess.VC.fsproj", "{20FAEC20-ED9D-4908-86FE-372FC68F2064}"
+	ProjectSection(ProjectDependencies) = postProject
+		{44BAD2E1-D2A9-42DF-802A-66C41D4D6E8E} = {44BAD2E1-D2A9-42DF-802A-66C41D4D6E8E}
+		{73B4B0A9-4305-4FB6-91AA-4A6D1E3F7C46} = {73B4B0A9-4305-4FB6-91AA-4A6D1E3F7C46}
+		{78373059-5731-4DBD-9B19-CFD2420B7D79} = {78373059-5731-4DBD-9B19-CFD2420B7D79}
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WX.Data.DatabaseDictionary.VC", "WX.Data.DatabaseDictionary.VC\WX.Data.DatabaseDictionary.VC.fsproj", "{73B4B0A9-4305-4FB6-91AA-4A6D1E3F7C46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WX.Data.DataModel.VC", "WX.Data.DataModel.VC\WX.Data.DataModel.VC.csproj", "{44BAD2E1-D2A9-42DF-802A-66C41D4D6E8E}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WX.Data.IDataAccess.VC", "WX.Data.IDataAccess.VC\WX.Data.IDataAccess.VC.fsproj", "{78373059-5731-4DBD-9B19-CFD2420B7D79}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6F99C1B3-CC00-4B92-BBB9-AC0DD83EF16D} = {6F99C1B3-CC00-4B92-BBB9-AC0DD83EF16D}
+		{9DE5955B-B87F-4976-96A5-1BAC1C9CA771} = {9DE5955B-B87F-4976-96A5-1BAC1C9CA771}
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WX.Data.ServiceContracts.VC", "WX.Data.ServiceContracts.VC\WX.Data.ServiceContracts.VC.fsproj", "{CB6C0380-BBE4-4B48-9BBF-288D9758FB90}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WX.Data.WcfService.VC", "WX.Data.WcfService.VC\WX.Data.WcfService.VC.fsproj", "{D4E1A351-0B16-42C9-BD50-EDB9FFE7C024}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6B8138B2-FE54-4771-BB38-BB67EE4A4164} = {6B8138B2-FE54-4771-BB38-BB67EE4A4164}
+		{CB6C0380-BBE4-4B48-9BBF-288D9758FB90} = {CB6C0380-BBE4-4B48-9BBF-288D9758FB90}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WX.Data.WcfService.WebIISHost.VC", "WX.Data.WcfService.WebIISHost.VC\WX.Data.WcfService.WebIISHost.VC.csproj", "{06B07627-CAD0-446E-B89A-506F90954E4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F99C1B3-CC00-4B92-BBB9-AC0DD83EF16D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F99C1B3-CC00-4B92-BBB9-AC0DD83EF16D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F99C1B3-CC00-4B92-BBB9-AC0DD83EF16D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F99C1B3-CC00-4B92-BBB9-AC0DD83EF16D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B8138B2-FE54-4771-BB38-BB67EE4A4164}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B8138B2-FE54-4771-BB38-BB67EE4A4164}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B8138B2-FE54-4771-BB38-BB67EE4A4164}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B8138B2-FE54-4771-BB38-BB67EE4A4164}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DE5955B-B87F-4976-96A5-1BAC1C9CA771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DE5955B-B87F-4976-96A5-1BAC1C9CA771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DE5955B-B87F-4976-96A5-1BAC1C9CA771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DE5955B-B87F-4976-96A5-1BAC1C9CA771}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9B2E99C-62C4-422C-89B6-28A3F3AD136D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9B2E99C-62C4-422C-89B6-28A3F3AD136D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9B2E99C-62C4-422C-89B6-28A3F3AD136D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9B2E99C-62C4-422C-89B6-28A3F3AD136D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EF5DC37-4A53-411D-AC18-73BDD1D84D12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EF5DC37-4A53-411D-AC18-73BDD1D84D12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EF5DC37-4A53-411D-AC18-73BDD1D84D12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EF5DC37-4A53-411D-AC18-73BDD1D84D12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F15D3F-0843-4FA2-86C4-45ED2C3B756C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F15D3F-0843-4FA2-86C4-45ED2C3B756C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F15D3F-0843-4FA2-86C4-45ED2C3B756C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F15D3F-0843-4FA2-86C4-45ED2C3B756C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BBF3D6C-192E-4104-9A42-D63A3887D1A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BBF3D6C-192E-4104-9A42-D63A3887D1A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BBF3D6C-192E-4104-9A42-D63A3887D1A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BBF3D6C-192E-4104-9A42-D63A3887D1A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F54745F5-DAAB-45D7-8AE6-C808C4C36F37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F54745F5-DAAB-45D7-8AE6-C808C4C36F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F54745F5-DAAB-45D7-8AE6-C808C4C36F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F54745F5-DAAB-45D7-8AE6-C808C4C36F37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20FAEC20-ED9D-4908-86FE-372FC68F2064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20FAEC20-ED9D-4908-86FE-372FC68F2064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20FAEC20-ED9D-4908-86FE-372FC68F2064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20FAEC20-ED9D-4908-86FE-372FC68F2064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73B4B0A9-4305-4FB6-91AA-4A6D1E3F7C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73B4B0A9-4305-4FB6-91AA-4A6D1E3F7C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73B4B0A9-4305-4FB6-91AA-4A6D1E3F7C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73B4B0A9-4305-4FB6-91AA-4A6D1E3F7C46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44BAD2E1-D2A9-42DF-802A-66C41D4D6E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44BAD2E1-D2A9-42DF-802A-66C41D4D6E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44BAD2E1-D2A9-42DF-802A-66C41D4D6E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44BAD2E1-D2A9-42DF-802A-66C41D4D6E8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78373059-5731-4DBD-9B19-CFD2420B7D79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78373059-5731-4DBD-9B19-CFD2420B7D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78373059-5731-4DBD-9B19-CFD2420B7D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78373059-5731-4DBD-9B19-CFD2420B7D79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB6C0380-BBE4-4B48-9BBF-288D9758FB90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB6C0380-BBE4-4B48-9BBF-288D9758FB90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB6C0380-BBE4-4B48-9BBF-288D9758FB90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB6C0380-BBE4-4B48-9BBF-288D9758FB90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4E1A351-0B16-42C9-BD50-EDB9FFE7C024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4E1A351-0B16-42C9-BD50-EDB9FFE7C024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4E1A351-0B16-42C9-BD50-EDB9FFE7C024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4E1A351-0B16-42C9-BD50-EDB9FFE7C024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06B07627-CAD0-446E-B89A-506F90954E4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06B07627-CAD0-446E-B89A-506F90954E4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06B07627-CAD0-446E-B89A-506F90954E4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06B07627-CAD0-446E-B89A-506F90954E4F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

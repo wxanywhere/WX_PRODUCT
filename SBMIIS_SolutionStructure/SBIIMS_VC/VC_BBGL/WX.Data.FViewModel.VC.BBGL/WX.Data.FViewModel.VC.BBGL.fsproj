@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9049ef1c-4f11-48d5-9a47-534c7de9237d}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WX.Data.FViewData</RootNamespace>
+    <AssemblyName>WX.Data.FViewModel.VC.BBGL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+    <Name>WX.Data.FViewModel.VC.BBGL</Name>
+    <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
+    <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>..\..\..\SBIIMS_Assemblies\ClientDebug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '11.0'">
+      <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')">
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets')">
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
+  <ItemGroup>
+    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WX.Data">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.BusinessBase">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.BusinessBase.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.CClientHelper">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.CClientHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.ClientHelper">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.ClientHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.FViewModel.Parts">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.FViewModel.Parts.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.FViewModelBase">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.FViewModelBase.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.ViewData.Frame">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.ViewData.Frame.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.ViewHelper">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.ViewHelper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SBIIMS_Base\Common\WX.Data.CModule\WX.Data.CModule.csproj">
+      <Name>WX.Data.CModule</Name>
+      <Project>{cfaeb72b-6be1-47b2-9ae5-7c85e26e392a}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	     Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

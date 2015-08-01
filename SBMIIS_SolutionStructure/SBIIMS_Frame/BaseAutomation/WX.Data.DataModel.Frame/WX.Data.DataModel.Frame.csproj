@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A86C32C2-A369-4F81-BE92-1D5C7B86BBFE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WX.Data.DataModel</RootNamespace>
+    <AssemblyName>WX.Data.DataModel.Frame</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\SBIIMS_Assemblies\ClientDebug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WX.Data.DatabaseHelper">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.DatabaseHelper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="SBIIMS_Frame_Login_A.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SBIIMS_Frame_Login_A.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="SBIIMS_Frame.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SBIIMS_Frame.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SBIIMS_Frame.edmx.diagram">
+      <DependentUpon>SBIIMS_Frame.edmx</DependentUpon>
+    </None>
+    <None Include="SBIIMS_Frame_Login_A.edmx.diagram">
+      <DependentUpon>SBIIMS_Frame_Login_A.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="SBIIMS_Frame_Login_B.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SBIIMS_Frame_Login_B.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SBIIMS_Frame_Login_B.edmx.diagram">
+      <DependentUpon>SBIIMS_Frame_Login_B.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

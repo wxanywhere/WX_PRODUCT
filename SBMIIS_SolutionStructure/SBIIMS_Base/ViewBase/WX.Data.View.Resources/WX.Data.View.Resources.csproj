@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF856D3A-FF36-4A64-9840-ABA5BB947C11}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WX.Data.View</RootNamespace>
+    <AssemblyName>WX.Data.View.Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>%24/SBIIMS_Scrum/Dev/SBIIMS_Base/ViewBase/WX.Data.View.Resources</SccProjectName>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <SccAuxPath>https://wx.visualstudio.com/defaultcollection</SccAuxPath>
+    <SccLocalPath>.</SccLocalPath>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\SBIIMS_Assemblies\ClientDebug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="PresentationFramework.Luna" />
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WX.Data.View.ValueConverter, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\CangKuInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\DanJuShangPinInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\FeiYongInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\FeiYongTypeInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\GuDingZiChanInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\JiaoYiFangShi.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\JiaoYiLeiBie.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\KeHuInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\KeHuZongHeInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\KuCunShangPinInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\LianXi_GHS_Info.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\ShangPinBaoJiaInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\ShangPinColorInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\ShangPinDanWeiInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\ShangPinGuiGeXingHaoInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\ShangPinInfo.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\ShangPinTypeInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\ShangPinZongZhangInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\SupplierInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\YuanGongYeWuInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\BasicInfoData\ZhangHuInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\JiaoYiData\DanJuInfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\JiaoYiData\FeiYongShouZhi_MingXi_Info.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\JiaoYiData\GHS_GongHuo_HuiZong_Info.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\JiaoYiData\GuDingZiChan_MingXi.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\JiaoYiData\KH_XiaoFei_HuiZong_Info.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\JiaoYiData\KuCunShangPin_HuiZong_Info.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\JiaoYiData\ShangPin_MingXi_Info.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_GG_JinQiJinHuo_ShangPin_Info.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_GHS_GongHuo_LiuShuiZhang.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_GHS_GongHuoXiaoShou_HuiZong_Info.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_GHS_GongHuoXiaoShou_LiuShuiZhang_Info.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_JingYing_HuiZong.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_KH_AnDiQu_XiaoFei_TongJi.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_KH_AnKeHuLeiXing_XiaoFei_TongJi.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_KH_JieHuo_AnKeHu_HuiZong.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_KH_JieHuo_AnShangPin_HuiZong.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_KH_XiaoFei_HuiZong.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_KH_XiaoFei_LiuShuiZhang.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_KH_XiaoFie_FengXi.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_ShangPin_AnTian_TongJi_Info.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_ShangPin_AnYeWu_HuiZong_Info.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_ShangPin_AnYue_TongJi_Info.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_ShangPin_FenLei_HuiZong_Info.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_SX_TH_HuiZong.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_YingShou_YingFu_HuiZong.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_ZhangWu_AnGongHuoShang_HuiZong.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_ZhangWu_AnKeHuXiaoFei_HuiZong.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_ZhangWu_AnYeWuYuan_HuiZong.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\QueryResultDemoData\QueryResultDemo_ZiChanFuZhai_HuiZong.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TableViewData\XmlData\SaleJiaoYiData.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Dictionary\DictionaryData\UIDisplayDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Dictionary\DictionaryData\UIEssenceExplainDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BindingData\XmlData\ControlData.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="WX.Data.CModule">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.CModule.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.View.Controls.Command, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="WX.Data.View.Controls.LoadingControl">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.View.Controls.LoadingControl.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.View.Controls.TextBox">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.View.Controls.TextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.View.FCustomElement">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.View.FCustomElement.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.View.Resources.ReportTemplate">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.View.Resources.ReportTemplate.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\XmlData\SystemData\FunctionItem.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\XmlData\SystemData\Message.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\XmlData\SystemData\SystemFunction.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\XmlData\SystemData\Theme.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

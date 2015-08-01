@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{878a723f-6b00-41f2-a949-35a276d0019d}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WX.Data.ViewModel</RootNamespace>
+    <AssemblyName>WX.Data.FViewModelAdvance.VC.GXBS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+    <Name>WX.Data.FViewModelAdvance.VC.GXBS</Name>
+    <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
+    <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>D:\Workspace\SBIIMS\SBIIMS_Assemblies\ClientDebug\Update</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '11.0'">
+      <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')">
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets')">
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
+  <ItemGroup>
+    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FSharp.PowerPack">
+      <HintPath>..\..\SBIIMS_Assemblies\ClientDebug\FSharp.PowerPack.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Collections.ParallelSeq">
+      <HintPath>..\..\SBIIMS_Assemblies\ClientDebug\FSharp.Collections.ParallelSeq.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WX.Data.BusinessEntitiesAdvance.Frame.BBXX">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.BusinessEntitiesAdvance.Frame.BBXX.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.BusinessEntitiesAdvance.Frame.SJJK">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.BusinessEntitiesAdvance.Frame.SJJK.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.BusinessEntitiesAdvance.VC.GXBS">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.BusinessEntitiesAdvance.VC.GXBS.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.ClientChannelAdvance.Frame.BBXX">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.ClientChannelAdvance.Frame.BBXX.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.ClientChannelAdvance.Frame.SJJK">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.ClientChannelAdvance.Frame.SJJK.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.ClientChannelAdvance.VC.GXBS">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.ClientChannelAdvance.VC.GXBS.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.FSmallViewModelBase">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.FSmallViewModelBase.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.FViewModel.VC.GXBS">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.FViewModel.VC.GXBS.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.SmallBusinessBase">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\WX.Data.SmallBusinessBase.dll</HintPath>
+    </Reference>
+    <Reference Include="WX.Data.View.ViewModelTemplateAdvance.VC.GXBS">
+      <HintPath>..\..\..\SBIIMS_Assemblies\ClientDebug\Update\WX.Data.View.ViewModelTemplateAdvance.VC.GXBS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	     Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

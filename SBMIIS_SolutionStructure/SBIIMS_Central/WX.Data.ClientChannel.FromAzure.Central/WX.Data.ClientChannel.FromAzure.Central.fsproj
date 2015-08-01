@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{64bf6499-37f3-4eab-a4a0-e9e56acce54c}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WX.Data.ServiceChannel.JXC</RootNamespace>
+    <AssemblyName>WX.Data.ClientChannel.FromAzure.Central</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <Name>WX.Data.ClientChannel.FromAzure.Central</Name>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>D:\Workspace\SBIIMS\WX.Data.Integration\ClientDebug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>bin\Release\WX.Data.ServiceChannel.JXC.XML</DocumentationFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
+  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
+  <ItemGroup>
+
+
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WX.Data.BusinessBase\WX.Data.BusinessBase.fsproj">
+      <Name>WX.Data.BusinessBase</Name>
+      <Project>{06908dc5-7812-4517-a230-68b4bc09162d}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WX.Data.BusinessDataEntities.JXC\WX.Data.BusinessDataEntities.JXC.fsproj">
+      <Name>WX.Data.BusinessDataEntities.JXC</Name>
+      <Project>{618c2b52-57f1-45a3-acbd-c8215e30650a}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WX.Data.BusinessDataEntitiesAdvance.JXC\WX.Data.BusinessDataEntitiesAdvance.JXC.fsproj">
+      <Name>WX.Data.BusinessDataEntitiesAdvance.JXC</Name>
+      <Project>{1dffa4b3-1e5f-4757-ac1f-f52b7dcbf840}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WX.Data.BusinessQueryEntities.JXC\WX.Data.BusinessQueryEntities.JXC.fsproj">
+      <Name>WX.Data.BusinessQueryEntities.JXC</Name>
+      <Project>{68a21a78-bb14-4083-b5db-d32250b31d79}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WX.Data.BusinessQueryEntitiesAdvance.JXC\WX.Data.BusinessQueryEntitiesAdvance.JXC.fsproj">
+      <Name>WX.Data.BusinessQueryEntitiesAdvance.JXC</Name>
+      <Project>{81009907-7630-478e-9847-ae97b9155035}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WX.Data.CModule\WX.Data.CModule.csproj">
+      <Name>WX.Data.CModule</Name>
+      <Project>{cfaeb72b-6be1-47b2-9ae5-7c85e26e392a}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WX.Data.Helper\WX.Data.Helper.csproj">
+      <Name>WX.Data.Helper</Name>
+      <Project>{caaf2408-efa2-4813-954b-b168748a2b0e}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <Reference Include="FSharp.PowerPack.Parallel.Seq">
+      <HintPath>C:\Program Files (x86)\FSharpPowerPack-2.0.0.0\bin\FSharp.PowerPack.Parallel.Seq.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ServiceBus">
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.ServiceBus\1.0.0.0__31bf3856ad364e35\Microsoft.ServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="FSharp.Core" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <ProjectReference Include="..\WX.Data.ServiceContracts.JXC\WX.Data.ServiceContracts.JXC.fsproj">
+      <Name>WX.Data.ServiceContracts.JXC</Name>
+      <Project>{89b3fd62-34d5-441b-966e-95337450b527}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WX.Data.ServiceContractsAdvance.JXC\WX.Data.ServiceContractsAdvance.JXC.fsproj">
+      <Name>WX.Data.ServiceContractsAdvance.JXC</Name>
+      <Project>{e7bdae13-ce55-4536-9faa-c19a7e84c867}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Channels" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	     Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

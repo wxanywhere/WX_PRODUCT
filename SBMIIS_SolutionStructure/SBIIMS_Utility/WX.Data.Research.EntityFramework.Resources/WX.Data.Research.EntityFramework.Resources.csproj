@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{40E40E72-7D8F-4FF2-886C-FAD52767B1B4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WX.Data.Research.EntityFramework.Resources</RootNamespace>
+    <AssemblyName>WX.Data.Research.EntityFramework.Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\SBIIMS_Assemblies\UtilityDebug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EdmGen">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v4.0.30319\EdmGen.exe</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="SBIIMS_Testing_Two.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SBIIMS_Testing_Two.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="SBIIMS_Testing_OneEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SBIIMS_Testing_OneEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SBIIMS_Testing_OneEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SBIIMS_Testing_OneEntities.edmx</DependentUpon>
+      <LastGenOutput>SBIIMS_Testing_OneEntities.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SBIIMS_Testing_OneEntities.edmx.diagram">
+      <DependentUpon>SBIIMS_Testing_OneEntities.edmx</DependentUpon>
+    </None>
+    <None Include="SBIIMS_Testing_OneEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SBIIMS_Testing_OneEntities.edmx</DependentUpon>
+      <LastGenOutput>SBIIMS_Testing_OneEntities.cs</LastGenOutput>
+    </None>
+    <None Include="SBIIMS_Testing_Two.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SBIIMS_Testing_Two.Context.cs</LastGenOutput>
+      <DependentUpon>SBIIMS_Testing_Two.edmx</DependentUpon>
+    </None>
+    <None Include="SBIIMS_Testing_Two.edmx.diagram">
+      <DependentUpon>SBIIMS_Testing_Two.edmx</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SBIIMS_Testing_Two.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SBIIMS_Testing_Two.cs</LastGenOutput>
+      <DependentUpon>SBIIMS_Testing_Two.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
