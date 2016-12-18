@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WXDataDataModelStoreContainer" CdmEntityContainer="SBIIMS_JXC_TJBB_CGYCGEntities">
+    <EntitySetMapping Name="T_CK">
+      <EntityTypeMapping TypeName="WX.Data.DataModel.T_CK">
+        <MappingFragment StoreEntitySet="T_CK">
+          <ScalarProperty Name="C_FBID" ColumnName="C_FBID" />
+          <ScalarProperty Name="C_GXRQ" ColumnName="C_GXRQ" />
+          <ScalarProperty Name="C_CJRQ" ColumnName="C_CJRQ" />
+          <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+          <ScalarProperty Name="C_MC" ColumnName="C_MC" />
+          <ScalarProperty Name="C_XBH" ColumnName="C_XBH" />
+          <ScalarProperty Name="C_MCJM" ColumnName="C_MCJM" />
+          <ScalarProperty Name="C_FZR" ColumnName="C_FZR" />
+          <ScalarProperty Name="C_DQ" ColumnName="C_DQ" />
+          <ScalarProperty Name="C_DQLJ" ColumnName="C_DQLJ" />
+          <ScalarProperty Name="C_LXDH" ColumnName="C_LXDH" />
+          <ScalarProperty Name="C_LXDZ" ColumnName="C_LXDZ" />
+          <ScalarProperty Name="C_MRBZ" ColumnName="C_MRBZ" />
+          <ScalarProperty Name="C_JYBZ" ColumnName="C_JYBZ" />
+          <ScalarProperty Name="C_XTCSBZ" ColumnName="C_XTCSBZ" />
+          <ScalarProperty Name="C_XNBZ" ColumnName="C_XNBZ" />
+          <ScalarProperty Name="C_CZY" ColumnName="C_CZY" />
+          <ScalarProperty Name="C_JBR" ColumnName="C_JBR" />
+          <ScalarProperty Name="C_BZ" ColumnName="C_BZ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_DJ_JHGL">
+      <EntityTypeMapping TypeName="WX.Data.DataModel.T_DJ_JHGL">
+        <MappingFragment StoreEntitySet="T_DJ_JHGL">
+          <ScalarProperty Name="C_ZWYJSBZ" ColumnName="C_ZWYJSBZ" />
+          <ScalarProperty Name="C_ZWNJSBZ" ColumnName="C_ZWNJSBZ" />
+          <ScalarProperty Name="C_KDJQBZ" ColumnName="C_KDJQBZ" />
+          <ScalarProperty Name="C_JQBZ" ColumnName="C_JQBZ" />
+          <ScalarProperty Name="C_CKBZ" ColumnName="C_CKBZ" />
+          <ScalarProperty Name="C_RKBZ" ColumnName="C_RKBZ" />
+          <ScalarProperty Name="C_YSBZ" ColumnName="C_YSBZ" />
+          <ScalarProperty Name="C_HLPCBZ" ColumnName="C_HLPCBZ" />
+          <ScalarProperty Name="C_JQRQ" ColumnName="C_JQRQ" />
+          <ScalarProperty Name="C_ZWY" ColumnName="C_ZWY" />
+          <ScalarProperty Name="C_ZWN" ColumnName="C_ZWN" />
+          <ScalarProperty Name="C_FBID" ColumnName="C_FBID" />
+          <ScalarProperty Name="C_GXRQ" ColumnName="C_GXRQ" />
+          <ScalarProperty Name="C_CJRQ" ColumnName="C_CJRQ" />
+          <ScalarProperty Name="C_SJYRQ" ColumnName="C_SJYRQ" />
+          <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+          <ScalarProperty Name="C_DJH" ColumnName="C_DJH" />
+          <ScalarProperty Name="C_DJLX" ColumnName="C_DJLX" />
+          <ScalarProperty Name="C_WFDW" ColumnName="C_WFDW" />
+          <ScalarProperty Name="C_GHS" ColumnName="C_GHS" />
+          <ScalarProperty Name="C_GHSJBR" ColumnName="C_GHSJBR" />
+          <ScalarProperty Name="C_CCK" ColumnName="C_CCK" />
+          <ScalarProperty Name="C_RCK" ColumnName="C_RCK" />
+          <ScalarProperty Name="C_YZQJE" ColumnName="C_YZQJE" />
+          <ScalarProperty Name="C_DJYZQJE" ColumnName="C_DJYZQJE" />
+          <ScalarProperty Name="C_DJSZQJE" ColumnName="C_DJSZQJE" />
+          <ScalarProperty Name="C_DJYHJE" ColumnName="C_DJYHJE" />
+          <ScalarProperty Name="C_VDJYZQJE" ColumnName="C_VDJYZQJE" />
+          <ScalarProperty Name="C_VDJSZQJE" ColumnName="C_VDJSZQJE" />
+          <ScalarProperty Name="C_VDJYHJE" ColumnName="C_VDJYHJE" />
+          <ScalarProperty Name="C_SZQJE" ColumnName="C_SZQJE" />
+          <ScalarProperty Name="C_JBR" ColumnName="C_JBR" />
+          <ScalarProperty Name="C_CZY" ColumnName="C_CZY" />
+          <ScalarProperty Name="C_DYBZ" ColumnName="C_DYBZ" />
+          <ScalarProperty Name="C_THBZ" ColumnName="C_THBZ" />
+          <ScalarProperty Name="C_DJZT" ColumnName="C_DJZT" />
+          <ScalarProperty Name="C_CKSL" ColumnName="C_CKSL" />
+          <ScalarProperty Name="C_RKSL" ColumnName="C_RKSL" />
+          <ScalarProperty Name="C_CKJE" ColumnName="C_CKJE" />
+          <ScalarProperty Name="C_RKJE" ColumnName="C_RKJE" />
+          <ScalarProperty Name="C_CKCBJE" ColumnName="C_CKCBJE" />
+          <ScalarProperty Name="C_RKCBJE" ColumnName="C_RKCBJE" />
+          <ScalarProperty Name="C_DJLRJE" ColumnName="C_DJLRJE" />
+          <ScalarProperty Name="C_DJJYLRL" ColumnName="C_DJJYLRL" />
+          <ScalarProperty Name="C_DJCBLRL" ColumnName="C_DJCBLRL" />
+          <ScalarProperty Name="C_SPYHJE" ColumnName="C_SPYHJE" />
+          <ScalarProperty Name="C_DJTMSL" ColumnName="C_DJTMSL" />
+          <ScalarProperty Name="C_WFYHZH" ColumnName="C_WFYHZH" />
+          <ScalarProperty Name="C_GHSYHZH" ColumnName="C_GHSYHZH" />
+          <ScalarProperty Name="C_WFZHLB" ColumnName="C_WFZHLB" />
+          <ScalarProperty Name="C_GHSZHLB" ColumnName="C_GHSZHLB" />
+          <ScalarProperty Name="C_ZFFS" ColumnName="C_ZFFS" />
+          <ScalarProperty Name="C_GLDJ" ColumnName="C_GLDJ" />
+          <ScalarProperty Name="C_SHR" ColumnName="C_SHR" />
+          <ScalarProperty Name="C_GLDJH" ColumnName="C_GLDJH" />
+          <ScalarProperty Name="C_BZ" ColumnName="C_BZ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_DJLX">
+      <EntityTypeMapping TypeName="WX.Data.DataModel.T_DJLX">
+        <MappingFragment StoreEntitySet="T_DJLX">
+          <ScalarProperty Name="C_DM" ColumnName="C_DM" />
+          <ScalarProperty Name="C_LX" ColumnName="C_LX" />
+          <ScalarProperty Name="C_QZ" ColumnName="C_QZ" />
+          <ScalarProperty Name="C_LB" ColumnName="C_LB" />
+          <ScalarProperty Name="C_JYBZ" ColumnName="C_JYBZ" />
+          <ScalarProperty Name="C_BZ" ColumnName="C_BZ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_DJSP_JHGL">
+      <EntityTypeMapping TypeName="WX.Data.DataModel.T_DJSP_JHGL">
+        <MappingFragment StoreEntitySet="T_DJSP_JHGL">
+          <ScalarProperty Name="C_ZWYJSBZ" ColumnName="C_ZWYJSBZ" />
+          <ScalarProperty Name="C_ZWNJSBZ" ColumnName="C_ZWNJSBZ" />
+          <ScalarProperty Name="C_CKBZ" ColumnName="C_CKBZ" />
+          <ScalarProperty Name="C_RKBZ" ColumnName="C_RKBZ" />
+          <ScalarProperty Name="C_HLPCBZ" ColumnName="C_HLPCBZ" />
+          <ScalarProperty Name="C_ZWY" ColumnName="C_ZWY" />
+          <ScalarProperty Name="C_ZWN" ColumnName="C_ZWN" />
+          <ScalarProperty Name="C_FBID" ColumnName="C_FBID" />
+          <ScalarProperty Name="C_CJRQ" ColumnName="C_CJRQ" />
+          <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+          <ScalarProperty Name="C_DJID" ColumnName="C_DJID" />
+          <ScalarProperty Name="C_SP" ColumnName="C_SP" />
+          <ScalarProperty Name="C_PC" ColumnName="C_PC" />
+          <ScalarProperty Name="C_XH" ColumnName="C_XH" />
+          <ScalarProperty Name="C_SCRQ" ColumnName="C_SCRQ" />
+          <ScalarProperty Name="C_YXRQ" ColumnName="C_YXRQ" />
+          <ScalarProperty Name="C_SPPH" ColumnName="C_SPPH" />
+          <ScalarProperty Name="C_JJ" ColumnName="C_JJ" />
+          <ScalarProperty Name="C_DJ" ColumnName="C_DJ" />
+          <ScalarProperty Name="C_ZKL" ColumnName="C_ZKL" />
+          <ScalarProperty Name="C_ZHJ" ColumnName="C_ZHJ" />
+          <ScalarProperty Name="C_SL" ColumnName="C_SL" />
+          <ScalarProperty Name="C_ZJE" ColumnName="C_ZJE" />
+          <ScalarProperty Name="C_ZHJE" ColumnName="C_ZHJE" />
+          <ScalarProperty Name="C_VSL" ColumnName="C_VSL" />
+          <ScalarProperty Name="C_VZJE" ColumnName="C_VZJE" />
+          <ScalarProperty Name="C_VZHJE" ColumnName="C_VZHJE" />
+          <ScalarProperty Name="C_CBJE" ColumnName="C_CBJE" />
+          <ScalarProperty Name="C_VCBJE" ColumnName="C_VCBJE" />
+          <ScalarProperty Name="C_CGGHS" ColumnName="C_CGGHS" />
+          <ScalarProperty Name="C_SPLRJE" ColumnName="C_SPLRJE" />
+          <ScalarProperty Name="C_SPJYLRL" ColumnName="C_SPJYLRL" />
+          <ScalarProperty Name="C_SPCBLRL" ColumnName="C_SPCBLRL" />
+          <ScalarProperty Name="C_SPYHJE" ColumnName="C_SPYHJE" />
+          <ScalarProperty Name="C_DJH" ColumnName="C_DJH" />
+          <ScalarProperty Name="C_DJLX" ColumnName="C_DJLX" />
+          <ScalarProperty Name="C_CCK" ColumnName="C_CCK" />
+          <ScalarProperty Name="C_RCK" ColumnName="C_RCK" />
+          <ScalarProperty Name="C_JBR" ColumnName="C_JBR" />
+          <ScalarProperty Name="C_CZY" ColumnName="C_CZY" />
+          <ScalarProperty Name="C_CGDJID" ColumnName="C_CGDJID" />
+          <ScalarProperty Name="C_SHR" ColumnName="C_SHR" />
+          <ScalarProperty Name="C_BZ" ColumnName="C_BZ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_GHS">
+      <EntityTypeMapping TypeName="WX.Data.DataModel.T_GHS">
+        <MappingFragment StoreEntitySet="T_GHS">
+          <ScalarProperty Name="C_FBID" ColumnName="C_FBID" />
+          <ScalarProperty Name="C_GXRQ" ColumnName="C_GXRQ" />
+          <ScalarProperty Name="C_CJRQ" ColumnName="C_CJRQ" />
+          <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+          <ScalarProperty Name="C_MC" ColumnName="C_MC" />
+          <ScalarProperty Name="C_MCJM" ColumnName="C_MCJM" />
+          <ScalarProperty Name="C_XBH" ColumnName="C_XBH" />
+          <ScalarProperty Name="C_LB" ColumnName="C_LB" />
+          <ScalarProperty Name="C_LX" ColumnName="C_LX" />
+          <ScalarProperty Name="C_DJ" ColumnName="C_DJ" />
+          <ScalarProperty Name="C_LXDH" ColumnName="C_LXDH" />
+          <ScalarProperty Name="C_LXDZ" ColumnName="C_LXDZ" />
+          <ScalarProperty Name="C_XYJF" ColumnName="C_XYJF" />
+          <ScalarProperty Name="C_GHJF" ColumnName="C_GHJF" />
+          <ScalarProperty Name="C_DQ" ColumnName="C_DQ" />
+          <ScalarProperty Name="C_MRBZ" ColumnName="C_MRBZ" />
+          <ScalarProperty Name="C_JYBZ" ColumnName="C_JYBZ" />
+          <ScalarProperty Name="C_XTCSBZ" ColumnName="C_XTCSBZ" />
+          <ScalarProperty Name="C_XNBZ" ColumnName="C_XNBZ" />
+          <ScalarProperty Name="C_CZY" ColumnName="C_CZY" />
+          <ScalarProperty Name="C_JBR" ColumnName="C_JBR" />
+          <ScalarProperty Name="C_LXR" ColumnName="C_LXR" />
+          <ScalarProperty Name="C_DY" ColumnName="C_DY" />
+          <ScalarProperty Name="C_BZ" ColumnName="C_BZ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_KCSP_DQZT">
+      <EntityTypeMapping TypeName="WX.Data.DataModel.T_KCSP_DQZT">
+        <MappingFragment StoreEntitySet="T_KCSP_DQZT">
+          <ScalarProperty Name="C_FBID" ColumnName="C_FBID" />
+          <ScalarProperty Name="C_GXRQ" ColumnName="C_GXRQ" />
+          <ScalarProperty Name="C_CJRQ" ColumnName="C_CJRQ" />
+          <ScalarProperty Name="C_KCSP" ColumnName="C_KCSP" />
+          <ScalarProperty Name="C_KCSL" ColumnName="C_KCSL" />
+          <ScalarProperty Name="C_KCSX" ColumnName="C_KCSX" />
+          <ScalarProperty Name="C_KCXX" ColumnName="C_KCXX" />
+          <ScalarProperty Name="C_CBJJ" ColumnName="C_CBJJ" />
+          <ScalarProperty Name="C_SCJJ" ColumnName="C_SCJJ" />
+          <ScalarProperty Name="C_CBJE" ColumnName="C_CBJE" />
+          <ScalarProperty Name="C_RKSL" ColumnName="C_RKSL" />
+          <ScalarProperty Name="C_CKSL" ColumnName="C_CKSL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_QFMX_JHGL">
+      <EntityTypeMapping TypeName="WX.Data.DataModel.T_QFMX_JHGL">
+        <MappingFragment StoreEntitySet="T_QFMX_JHGL">
+          <ScalarProperty Name="C_CKBZ" ColumnName="C_CKBZ" />
+          <ScalarProperty Name="C_RKBZ" ColumnName="C_RKBZ" />
+          <ScalarProperty Name="C_QSBZ" ColumnName="C_QSBZ" />
+          <ScalarProperty Name="C_ZWNJSBZ" ColumnName="C_ZWNJSBZ" />
+          <ScalarProperty Name="C_ZWYJSBZ" ColumnName="C_ZWYJSBZ" />
+          <ScalarProperty Name="C_ZWN" ColumnName="C_ZWN" />
+          <ScalarProperty Name="C_ZWY" ColumnName="C_ZWY" />
+          <ScalarProperty Name="C_FBID" ColumnName="C_FBID" />
+          <ScalarProperty Name="C_GXRQ" ColumnName="C_GXRQ" />
+          <ScalarProperty Name="C_CJRQ" ColumnName="C_CJRQ" />
+          <ScalarProperty Name="C_QFJE" ColumnName="C_QFJE" />
+          <ScalarProperty Name="C_SZQJE" ColumnName="C_SZQJE" />
+          <ScalarProperty Name="C_DJ" ColumnName="C_DJ" />
+          <ScalarProperty Name="C_DJH" ColumnName="C_DJH" />
+          <ScalarProperty Name="C_DJLX" ColumnName="C_DJLX" />
+          <ScalarProperty Name="C_GHS" ColumnName="C_GHS" />
+          <ScalarProperty Name="C_GHSJBR" ColumnName="C_GHSJBR" />
+          <ScalarProperty Name="C_YZQJE" ColumnName="C_YZQJE" />
+          <ScalarProperty Name="C_DJYZQJE" ColumnName="C_DJYZQJE" />
+          <ScalarProperty Name="C_DJSZQJE" ColumnName="C_DJSZQJE" />
+          <ScalarProperty Name="C_DJYHJE" ColumnName="C_DJYHJE" />
+          <ScalarProperty Name="C_VDJYZQJE" ColumnName="C_VDJYZQJE" />
+          <ScalarProperty Name="C_VDJSZQJE" ColumnName="C_VDJSZQJE" />
+          <ScalarProperty Name="C_VDJYHJE" ColumnName="C_VDJYHJE" />
+          <ScalarProperty Name="C_CCK" ColumnName="C_CCK" />
+          <ScalarProperty Name="C_RCK" ColumnName="C_RCK" />
+          <ScalarProperty Name="C_CKSL" ColumnName="C_CKSL" />
+          <ScalarProperty Name="C_RKSL" ColumnName="C_RKSL" />
+          <ScalarProperty Name="C_CKJE" ColumnName="C_CKJE" />
+          <ScalarProperty Name="C_RKJE" ColumnName="C_RKJE" />
+          <ScalarProperty Name="C_CKCBJE" ColumnName="C_CKCBJE" />
+          <ScalarProperty Name="C_RKCBJE" ColumnName="C_RKCBJE" />
+          <ScalarProperty Name="C_JBR" ColumnName="C_JBR" />
+          <ScalarProperty Name="C_CZY" ColumnName="C_CZY" />
+          <ScalarProperty Name="C_DJLRJE" ColumnName="C_DJLRJE" />
+          <ScalarProperty Name="C_DJJYLRL" ColumnName="C_DJJYLRL" />
+          <ScalarProperty Name="C_DJCBLRL" ColumnName="C_DJCBLRL" />
+          <ScalarProperty Name="C_SPYHJE" ColumnName="C_SPYHJE" />
+          <ScalarProperty Name="C_DJTMSL" ColumnName="C_DJTMSL" />
+          <ScalarProperty Name="C_GLDJ" ColumnName="C_GLDJ" />
+          <ScalarProperty Name="C_SHR" ColumnName="C_SHR" />
+          <ScalarProperty Name="C_BZ" ColumnName="C_BZ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_RZ">
+      <EntityTypeMapping TypeName="WX.Data.DataModel.T_RZ">
+        <MappingFragment StoreEntitySet="T_RZ">
+          <ScalarProperty Name="C_FBID" ColumnName="C_FBID" />
+          <ScalarProperty Name="C_CJRQ" ColumnName="C_CJRQ" />
+          <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+          <ScalarProperty Name="C_JLID" ColumnName="C_JLID" />
+          <ScalarProperty Name="C_YWLX" ColumnName="C_YWLX" />
+          <ScalarProperty Name="C_YWLXMC" ColumnName="C_YWLXMC" />
+          <ScalarProperty Name="C_CZLX" ColumnName="C_CZLX" />
+          <ScalarProperty Name="C_CZLXMC" ColumnName="C_CZLXMC" />
+          <ScalarProperty Name="C_CZY" ColumnName="C_CZY" />
+          <ScalarProperty Name="C_CZYXM" ColumnName="C_CZYXM" />
+          <ScalarProperty Name="C_BM" ColumnName="C_BM" />
+          <ScalarProperty Name="C_BBM" ColumnName="C_BBM" />
+          <ScalarProperty Name="C_ZBM" ColumnName="C_ZBM" />
+          <ScalarProperty Name="C_ZBBM" ColumnName="C_ZBBM" />
+          <ScalarProperty Name="C_ZBSL" ColumnName="C_ZBSL" />
+          <ScalarProperty Name="C_HOST" ColumnName="C_HOST" />
+          <ScalarProperty Name="C_IP" ColumnName="C_IP" />
+          <ScalarProperty Name="C_NR" ColumnName="C_NR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_SP">
+      <EntityTypeMapping TypeName="WX.Data.DataModel.T_SP">
+        <MappingFragment StoreEntitySet="T_SP">
+          <ScalarProperty Name="C_JYBZ" ColumnName="C_JYBZ" />
+          <ScalarProperty Name="C_XNBZ" ColumnName="C_XNBZ" />
+          <ScalarProperty Name="C_XTCSBZ" ColumnName="C_XTCSBZ" />
+          <ScalarProperty Name="C_FBID" ColumnName="C_FBID" />
+          <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+          <ScalarProperty Name="C_GXRQ" ColumnName="C_GXRQ" />
+          <ScalarProperty Name="C_CJRQ" ColumnName="C_CJRQ" />
+          <ScalarProperty Name="C_XBH" ColumnName="C_XBH" />
+          <ScalarProperty Name="C_MC" ColumnName="C_MC" />
+          <ScalarProperty Name="C_MCJM" ColumnName="C_MCJM" />
+          <ScalarProperty Name="C_DW" ColumnName="C_DW" />
+          <ScalarProperty Name="C_GGXH" ColumnName="C_GGXH" />
+          <ScalarProperty Name="C_YS" ColumnName="C_YS" />
+          <ScalarProperty Name="C_SPLB" ColumnName="C_SPLB" />
+          <ScalarProperty Name="C_SCCS" ColumnName="C_SCCS" />
+          <ScalarProperty Name="C_KCSX" ColumnName="C_KCSX" />
+          <ScalarProperty Name="C_KCXX" ColumnName="C_KCXX" />
+          <ScalarProperty Name="C_YSJJ" ColumnName="C_YSJJ" />
+          <ScalarProperty Name="C_YSSJ" ColumnName="C_YSSJ" />
+          <ScalarProperty Name="C_BZQX" ColumnName="C_BZQX" />
+          <ScalarProperty Name="C_BHQX" ColumnName="C_BHQX" />
+          <ScalarProperty Name="C_CZY" ColumnName="C_CZY" />
+          <ScalarProperty Name="C_JBR" ColumnName="C_JBR" />
+          <ScalarProperty Name="C_TM" ColumnName="C_TM" />
+          <ScalarProperty Name="C_BZ" ColumnName="C_BZ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_SPDW">
+      <EntityTypeMapping TypeName="WX.Data.DataModel.T_SPDW">
+        <MappingFragment StoreEntitySet="T_SPDW">
+          <ScalarProperty Name="C_DM" ColumnName="C_DM" />
+          <ScalarProperty Name="C_DW" ColumnName="C_DW" />
+          <ScalarProperty Name="C_JYBZ" ColumnName="C_JYBZ" />
+          <ScalarProperty Name="C_XTCSBZ" ColumnName="C_XTCSBZ" />
+          <ScalarProperty Name="C_BZ" ColumnName="C_BZ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_SPYS">
+      <EntityTypeMapping TypeName="WX.Data.DataModel.T_SPYS">
+        <MappingFragment StoreEntitySet="T_SPYS">
+          <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+          <ScalarProperty Name="C_XH" ColumnName="C_XH" />
+          <ScalarProperty Name="C_YS" ColumnName="C_YS" />
+          <ScalarProperty Name="C_JYBZ" ColumnName="C_JYBZ" />
+          <ScalarProperty Name="C_XTCSBZ" ColumnName="C_XTCSBZ" />
+          <ScalarProperty Name="C_BZ" ColumnName="C_BZ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_YG">
+      <EntityTypeMapping TypeName="WX.Data.DataModel.T_YG">
+        <MappingFragment StoreEntitySet="T_YG">
+          <ScalarProperty Name="C_FBID" ColumnName="C_FBID" />
+          <ScalarProperty Name="C_GXRQ" ColumnName="C_GXRQ" />
+          <ScalarProperty Name="C_CJRQ" ColumnName="C_CJRQ" />
+          <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+          <ScalarProperty Name="C_XM" ColumnName="C_XM" />
+          <ScalarProperty Name="C_XMJM" ColumnName="C_XMJM" />
+          <ScalarProperty Name="C_XBH" ColumnName="C_XBH" />
+          <ScalarProperty Name="C_XB" ColumnName="C_XB" />
+          <ScalarProperty Name="C_NL" ColumnName="C_NL" />
+          <ScalarProperty Name="C_XX" ColumnName="C_XX" />
+          <ScalarProperty Name="C_XL" ColumnName="C_XL" />
+          <ScalarProperty Name="C_HF" ColumnName="C_HF" />
+          <ScalarProperty Name="C_ZN" ColumnName="C_ZN" />
+          <ScalarProperty Name="C_DWBM" ColumnName="C_DWBM" />
+          <ScalarProperty Name="C_LXDH" ColumnName="C_LXDH" />
+          <ScalarProperty Name="C_LXDZ" ColumnName="C_LXDZ" />
+          <ScalarProperty Name="C_JYBZ" ColumnName="C_JYBZ" />
+          <ScalarProperty Name="C_XTCSBZ" ColumnName="C_XTCSBZ" />
+          <ScalarProperty Name="C_XNBZ" ColumnName="C_XNBZ" />
+          <ScalarProperty Name="C_JBR" ColumnName="C_JBR" />
+          <ScalarProperty Name="C_CZY" ColumnName="C_CZY" />
+          <ScalarProperty Name="C_ZW" ColumnName="C_ZW" />
+          <ScalarProperty Name="C_GZJS" ColumnName="C_GZJS" />
+          <ScalarProperty Name="C_TCBL" ColumnName="C_TCBL" />
+          <ScalarProperty Name="C_GF" ColumnName="C_GF" />
+          <ScalarProperty Name="C_RZRQ" ColumnName="C_RZRQ" />
+          <ScalarProperty Name="C_HTNX" ColumnName="C_HTNX" />
+          <ScalarProperty Name="C_YLZBZ" ColumnName="C_YLZBZ" />
+          <ScalarProperty Name="C_GZNX" ColumnName="C_GZNX" />
+          <ScalarProperty Name="C_CZYBZ" ColumnName="C_CZYBZ" />
+          <ScalarProperty Name="C_SHYBZ" ColumnName="C_SHYBZ" />
+          <ScalarProperty Name="C_YWYBZ" ColumnName="C_YWYBZ" />
+          <ScalarProperty Name="C_FZYW" ColumnName="C_FZYW" />
+          <ScalarProperty Name="C_DWBMLJ" ColumnName="C_DWBMLJ" />
+          <ScalarProperty Name="C_BTFYX" ColumnName="C_BTFYX" />
+          <ScalarProperty Name="C_LZRQ" ColumnName="C_LZRQ" />
+          <ScalarProperty Name="C_ZP" ColumnName="C_ZP" />
+          <ScalarProperty Name="C_DY" ColumnName="C_DY" />
+          <ScalarProperty Name="C_BZ" ColumnName="C_BZ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

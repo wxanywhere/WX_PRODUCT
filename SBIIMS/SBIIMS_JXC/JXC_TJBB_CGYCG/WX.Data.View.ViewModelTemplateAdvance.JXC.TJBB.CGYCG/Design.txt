@@ -1,0 +1,3 @@
+﻿//该设计可以避免所有功能装配维护时的安全风险，并满足某一功能节点开发时拥有足够的权限
+
+//须同时编辑文件SBIIMS\WX.Data.View.Resources\Data\XmlData\SystemData\SystemFunction.xml，涉及VC_ZPM="..." 及 VC_ZPM_GJ="..."

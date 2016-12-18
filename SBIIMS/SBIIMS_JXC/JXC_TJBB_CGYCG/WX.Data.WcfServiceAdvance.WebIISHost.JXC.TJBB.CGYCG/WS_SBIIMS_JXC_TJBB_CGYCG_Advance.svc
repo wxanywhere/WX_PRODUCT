@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WX.Data.WcfService.WS_SBIIMS_JXC_TJBB_CGYCG_Advance" CodeBehind="WS_SBIIMS_JXC_TJBB_CGYCG_Advance.fs" %>

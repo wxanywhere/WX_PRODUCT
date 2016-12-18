@@ -1,0 +1,10 @@
+﻿//--------------------------------------------------------------------------------
+//BQ
+(
+@"D:\Workspace\SBIIMS\SBIIMS_JXC\JXC_TJBB_CGYCG\WX.Data.BusinessEntitiesAdvance.JXC.TJBB.CGYCG",
+[
+"BQ_TJBB_CGYCG_Advance","统计报表-采购员采购"
+]
+)
+|>AdvanceBQFilesGenerator.GenerateCodeFiles
+//--------------------------------------------------------------------------------

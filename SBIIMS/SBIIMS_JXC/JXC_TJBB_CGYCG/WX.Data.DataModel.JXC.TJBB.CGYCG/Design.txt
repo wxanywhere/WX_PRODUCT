@@ -1,0 +1,99 @@
+﻿//---------------------------------------------------------------------
+获取当前装配名
+var xa = Assembly.GetCallingAssembly().GetName().Name; //错误
+var xb = Assembly.GetExecutingAssembly().GetName().Name; //正确
+var xc = Assembly.GetAssembly(typeof(SBIIMS_JXC_TJBB_CGYCGEntitiesAdvance)).GetName().Name; //正确
+最好是获取Assembly的完整的名称
+var xd = Assembly.GetAssembly(typeof(SBIIMS_JXC_TJBB_CGYCGEntitiesAdvance)).GetName().FullName
+//---------------------------------------------------------------------
+Performance and the Entity Framework
+http://www.rdsquared.net/2009/08/13/CodeProject_Performance_and_the_Entity_Framework.pdf (已下载)
+//正确参考
+        public SBIIMS_JXC_TJBB_CGYCGEntitiesAdvance()
+            : base(ConnectionString.GetEmbeddedResourceEntityConnectionString(ConnectionString.SBIIMS_JXC_TJBB_CGYCG, "WX.Data.DataModel.SBIIMS_JXC_TJBB_CGYCG", @"*")) //使用通配符， Embedded resource 的名称可通过"Reflector.exe"查看
+        { }
+        public SBIIMS_JXC_TJBB_CGYCGEntitiesAdvance()
+            : base(ConnectionString.GetEmbeddedResourceEntityConnectionString(ConnectionString.SBIIMS_JXC_TJBB_CGYCG, "WX.Data.DataModel.SBIIMS_JXC_TJBB_CGYCG", @"WX.Data.DataModel.JXC.TJBB.CGYCG,Version=1.0.0.0, Culture=neutral,PublicKeyToken=null")) //使用具体的装配名称， Embedded resource 的名称可通过"Reflector.exe"查看
+        { }
+
+        public SBIIMS_JXC_TJBB_CGYCGEntitiesAdvance()
+            : base(ConnectionString.GetEmbeddedResourceEntityConnectionString(ConnectionString.SBIIMS_JXC_TJBB_CGYCG, "WX.Data.DataModel.SBIIMS_JXC_TJBB_CGYCG", @"WX.Data.DataModel.JXC.TJBB.CGYCG")) //使用装配的基本名称
+        { }
+
+//---------------------------------------------------------------------
+置于项目属性的Build Events中
+
+//使用$(ProjectDir)，须保证*.ssdl, *.csdl, *.msl 文件在项目中
+"%windir%\Microsoft.NET\Framework\v4.0.30319\EdmGen.exe" /nologo /language:CSharp /mode:ViewGeneration "/inssdl:$(ProjectDir)SBIIMS_JXC_TJBB_CGYCG.ssdl" "/incsdl:$(ProjectDir)SBIIMS_JXC_TJBB_CGYCG.csdl" "/inmsl:$(ProjectDir)SBIIMS_JXC_TJBB_CGYCG.msl" "/outviews:$(ProjectDir)SBIIMS_JXC_TJBB_CGYCGViews.cs"
+
+//使用$(TargetDir)，须保证*.ssdl, *.csdl, *.msl 文件在输出目录中
+"%windir%\Microsoft.NET\Framework\v4.0.30319\EdmGen.exe" /nologo /language:CSharp /mode:ViewGeneration "/inssdl:$(TargetDir)SBIIMS_JXC_TJBB_CGYCG.ssdl" "/incsdl:$(TargetDir)SBIIMS_JXC_TJBB_CGYCG.csdl" "/inmsl:$(TargetDir)SBIIMS_JXC_TJBB_CGYCG.msl" "/outviews:$(ProjectDir)SBIIMS_JXC_TJBB_CGYCGViews.cs"
+
+//---------------------------------------------------------------------
+*.ssdl, *.csdl, *.msl 文件在项目中的情况，以下连接自负串不正确??? (*.edmx文件在项目中的情况下正确)
+        <add name="SBIIMS_JXC_TJBB_CGYCGEntities" connectionString="metadata=res://*/SBIIMS_JXC_TJBB_CGYCG.csdl|res://*/SBIIMS_JXC_TJBB_CGYCG.ssdl|res://*/SBIIMS_JXC_TJBB_CGYCG.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=192.168.2.199;initial catalog=SBIIMS_JXC_TJBB_CGYCG;persist security info=True;user id=sa;password=YZWX001@zhoutao.workspace;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+
+Performance and the Entity Framework
+http://www.rdsquared.net/2009/08/13/CodeProject_Performance_and_the_Entity_Framework.pdf (已下载)
+//预生成实体模型的View置于项目属性的Build Events中
+"%windir%\Microsoft.NET\Framework\v3.5\EdmGen.exe"
+/mode:ViewGeneration
+/language:CSharp
+/nologo
+"/inssdl:MyEntityModel.ssdl"
+"/incsdl:MyEntityModel.csdl"
+"/inmsl:MyEntityModel.msl"
+"/outviews:MyEntityModel.Views.cs"
+//----------------------------------------------------------------------------
+http://msdn.microsoft.com/en-us/library/cc716717
+How to: Make Model and Mapping Files Embedded Resources
+To embed model and mapping files
+
+ 1.
+In Solution Explorer, select the conceptual (.csdl) file.
+ 
+2.
+In the Properties pane, set Build Action to Embedded Resource. 
+
+3.
+Repeat steps 1 and 2 for the storage (.ssdl) file and the mapping (.msl) file.
+ 
+4.
+In Solution Explorer, double-click the App.config file and then modify the Metadata parameter in the connectionString attribute based on one of the following formats:
+ Metadata= res://<assemblyFullName>/<resourceName>;
+
+ 
+Metadata= res://*/<resourceName>;
+
+ 
+Metadata=res://*;
+
+
+  <connectionStrings>
+      <add name="AdventureWorksEntities" connectionString="metadata=
+           res://AWSalesSample/Microsoft.Samples.Edm.AdventureWorks.csdl|
+           res://AWSalesSample/Microsoft.Samples.Edm.AdventureWorks.ssdl|
+           res://AWSalesSample/Microsoft.Samples.Edm.AdventureWorks.msl;
+              provider=System.Data.SqlClient;provider connection string='Data Source=localhost;
+           Initial Catalog=AdventureWorks;Integrated Security=True;'"
+           providerName="System.Data.EntityClient" />
+</connectionStrings>
+
+//----------------------------------------------------------------------------
+Connection Strings
+http://msdn.microsoft.com/en-us/library/cc716756
+
+//----------------------------------------------------------------------------
+How to: Define the Connection String
+
+
+
+<connectionStrings>
+    <add name="AdventureWorksEntities" 
+		 connectionString="metadata=.\AdventureWorks.csdl|.\AdventureWorks.ssdl|.\AdventureWorks.msl;
+		 provider=System.Data.SqlClient;provider connection string='Data Source=localhost;
+		 Initial Catalog=AdventureWorks;Integrated Security=True;Connection Timeout=60;
+		 multipleactiveresultsets=true'" providerName="System.Data.EntityClient" />
+</connectionStrings>
+
+//----------------------------------------------------------------------------

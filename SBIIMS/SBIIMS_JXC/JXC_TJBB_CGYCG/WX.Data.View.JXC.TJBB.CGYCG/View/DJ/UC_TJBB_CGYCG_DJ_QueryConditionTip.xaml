@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="WX.Data.View.UC_TJBB_CGYCG_DJ_QueryConditionTip" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cm="clr-namespace:WX.Data.View;assembly=WX.Data.View.FCustomElement"
+             Style="{StaticResource UserControlAutoSizeStyle}">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockLeftStyle}" />
+        <Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource RadioButtonConditionTipStyle}" />
+    </UserControl.Resources>
+    <Grid  DataContext="{Binding D_DJQueryEntity}">
+        <StackPanel>
+            <RadioButton Visibility="{Binding VisibilityVC_DJH}"    IsChecked="{Binding IsCheckedVC_DJH}">
+                <DockPanel LastChildFill="True">
+                    <Label DockPanel.Dock="Left" Content="单据号："/>
+                    <TextBlock  Text="{cm:GBinding VC_DJH}" />
+                </DockPanel>
+            </RadioButton>
+            <RadioButton Visibility="{Binding VisibilityVC_GHSJM}"  IsChecked="{Binding IsCheckedVC_GHSJM}">
+                <DockPanel>
+                    <Label DockPanel.Dock="Left" Content="1. "/>
+                    <Label DockPanel.Dock="Left" Content="供货商简码："/>
+                    <TextBlock  Text="{cm:GBinding VC_GHSJM}" />
+                </DockPanel>
+            </RadioButton>
+            <RadioButton Visibility="{Binding VisibilityVC_CKJM}"  IsChecked="{Binding IsCheckedVC_CKJM}">
+                <DockPanel>
+                    <Label DockPanel.Dock="Left" Content="2. "/>
+                    <Label DockPanel.Dock="Left" Content="仓库简码："/>
+                    <TextBlock  Text="{cm:GBinding VC_CKJM}" />
+                </DockPanel>
+            </RadioButton>
+            <RadioButton Visibility="{Binding VisibilityVC_DJLXID}"  IsChecked="{Binding IsCheckedVC_DJLXID}">
+                <DockPanel>
+                    <Label DockPanel.Dock="Left" Content="1. "/>
+                    <Label DockPanel.Dock="Left" Content="单据类型代号："/>
+                    <TextBlock  Text="{cm:GBinding VC_DJLXID}" />
+                </DockPanel>
+            </RadioButton>
+        </StackPanel>
+    </Grid>
+</UserControl>

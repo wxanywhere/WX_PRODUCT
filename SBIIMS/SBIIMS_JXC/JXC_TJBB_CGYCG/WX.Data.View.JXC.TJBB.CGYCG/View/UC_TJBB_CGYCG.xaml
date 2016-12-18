@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="WX.Data.View.UC_TJBB_CGYCG"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:UC="clr-namespace:WX.Data.View">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <UC:UC_TJBB_CGYCG_ButtonGroup />
+        </Border>
+        <Border Grid.Row="1">
+            <UC:UC_TJBB_CGYCG_ConditionGroup />
+        </Border>
+        <TabControl Grid.Row="2">
+            <TabItem Header="采购单据">
+                <UC:UC_TJBB_CGYCG_DJ />
+            </TabItem>
+            <TabItem Header="采购商品汇总">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0">
+                        <UC:UC_TJBB_CGYCG_HZ_ConditionGroup />
+                    </Border>
+                    <Border Grid.Row="1">
+                        <UC:UC_TJBB_CGYCG_HZ_GridRecord />
+                    </Border>
+                </Grid>
+            </TabItem>
+            <TabItem Header="采购商品明细">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0">
+                        <UC:UC_TJBB_CGYCG_MX_ConditionGroup />
+                    </Border>
+                    <Border Grid.Row="1">
+                        <UC:UC_TJBB_CGYCG_MX_GridRecord />
+                    </Border>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Popup Style="{StaticResource PopupWorkspaceStyle}" >
+            <Border Style="{StaticResource BorderPopupWorkspaceStyle}">
+                <ContentControl Content="{Binding [PopupSub]}"/>
+            </Border>
+        </Popup>
+        <Popup Style="{StaticResource PopupMenuWorkspaceStyle}" >
+            <Border Style="{StaticResource BorderPopupMenuWorkspaceStyle}">
+                <ContentControl Content="{Binding [ContextMenu]}"/>
+            </Border>
+        </Popup>
+    </Grid>
+</UserControl>

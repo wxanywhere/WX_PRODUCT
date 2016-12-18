@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="WX.Data.View.UC_TJBB_CGYCG_MX_GridRecord"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:cm="clr-namespace:WX.Data.View;assembly=WX.Data.View.FCustomElement"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DataGrid ItemsSource="{Binding D_MXView}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="开单日期" Binding="{cm:DateBinding VC_CJRQ}" />
+                <DataGridTextColumn Header="采购员" Binding="{Binding VC_JBR}" />
+                <DataGridTextColumn Header="单据号" Binding="{Binding VC_DJH}" />
+                <DataGridTextColumn Header="供货商" Binding="{Binding VC_GHS}" />
+                <DataGridTextColumn Header="仓库" Binding="{Binding VC_CK}" />
+                <DataGridTextColumn Header="商品名称" Binding="{Binding VC_SP}" />
+                <DataGridTextColumn Header="商品编号" Binding="{Binding VC_SPXBH}" />
+                <DataGridTextColumn Header="批次" Binding="{Binding VC_SPPC}" />
+                <DataGridTextColumn Header="颜色" Binding="{Binding VC_SPYS}" />
+                <DataGridTextColumn Header="规格型号" Binding="{Binding VC_SPGGXH}" />
+                <DataGridTextColumn Header="单位" Binding="{Binding VC_SPDW}" />
+                <DataGridTextColumn Header="数量" Binding="{cm:IntegerBinding VC_SPSL}" />
+                <DataGridTextColumn Header="单价" Binding="{cm:MoneyBinding VC_SPDJ}" />
+                <DataGridTextColumn Header="总金额" Binding="{cm:MoneyBinding VC_SPZJE}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <ContentControl Grid.Row="1" Content="{Binding D_MXPaging}"/>
+    </Grid>
+</UserControl>

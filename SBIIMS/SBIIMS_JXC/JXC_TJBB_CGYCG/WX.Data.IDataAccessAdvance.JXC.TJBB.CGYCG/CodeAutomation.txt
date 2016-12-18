@@ -1,0 +1,17 @@
+﻿//--------------------------------------------------------------------------------
+//Multi layer
+(
+".JXC.TJBB.CGYCG",  //组件装配名后缀
+"SBIIMS_JXC",  //系统简称
+@"D:\Workspace\SBIIMS\SBIIMS_JXC\JXC_TJBB_CGYCG\WX.Data.IDataAccessAdvance.JXC.TJBB.CGYCG",  //接口文件目录名称
+@"D:\Workspace\SBIIMS\SBIIMS_JXC\JXC_TJBB_CGYCG",  //目标基本路径或入口路径
+[
+"IDA_TJBB_CGYCG_BusinessAdvance"
+"IDA_TJBB_CGYCG_QueryAdvance"  //接口类型名组
+]
+,
+ThreePhaseGroup  //接口文件名成组片断段级别
+)
+|>AdvanceBusinessExchangeLayerCoding.GenerateCodingFiles
+|>ObjectDumper.Write
+//--------------------------------------------------------------------------------

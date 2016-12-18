@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="WX.Data.View.UC_TJBB_CGYCG_DJ"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:UC="clr-namespace:WX.Data.View"
+    >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <UC:UC_TJBB_CGYCG_DJ_ConditionGroup />
+        </Border>
+        <Border Grid.Row="1">
+            <UC:UC_TJBB_CGYCG_DJ_GridRecord />
+        </Border>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0">
+                <UC:UC_TJBB_CGYCG_DJ_Child_ConditionGroup />
+            </Border>
+            <Border Grid.Row="1">
+                <UC:UC_TJBB_CGYCG_DJ_Child_GridRecord />
+            </Border>
+        </Grid>
+        <GridSplitter Grid.Row="1" Style="{StaticResource GridSplitterRowDirectionStyle}" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    xmlns:v="clr-namespace:WX.Data.View;assembly=WX.Data.View.JXC.TJBB.CGYCG"
+    xmlns:vm="clr-namespace:WX.Data.ViewModel;assembly=WX.Data.FViewModel.JXC.TJBB.CGYCG"
+                    >
+    <!--Entry-->
+    <DataTemplate DataType="{x:Type vm:FVM_TJBB_CGYCG}">
+        <v:UC_TJBB_CGYCG />
+    </DataTemplate>
+    <!--Sub-->
+</ResourceDictionary>

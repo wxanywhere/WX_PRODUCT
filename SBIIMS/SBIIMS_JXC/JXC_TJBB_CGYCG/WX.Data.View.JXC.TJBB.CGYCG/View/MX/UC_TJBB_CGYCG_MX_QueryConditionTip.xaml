@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="WX.Data.View.UC_TJBB_CGYCG_MX_QueryConditionTip" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cm="clr-namespace:WX.Data.View;assembly=WX.Data.View.FCustomElement"
+             Style="{StaticResource UserControlAutoSizeStyle}">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockLeftStyle}" />
+    <Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource RadioButtonConditionTipStyle}" />
+    </UserControl.Resources>
+    <Grid  DataContext="{Binding D_MXQueryEntity}">
+        <StackPanel>
+            <RadioButton Visibility="{Binding VisibilityVC_SPJM}"   IsChecked="{Binding IsCheckedVC_SPJM}" >
+                <DockPanel LastChildFill="True">
+                    <Label DockPanel.Dock="Left" Content="1. "/>
+                    <Label DockPanel.Dock="Left" Content="商品简码："/>
+                    <TextBlock  Text="{cm:GBinding VC_SPJM}" />
+                </DockPanel>
+            </RadioButton>
+            <RadioButton Visibility="{Binding VisibilityVC_GHSJM}"   IsChecked="{Binding IsCheckedVC_GHSJM}" >
+                <DockPanel LastChildFill="True">
+                    <Label DockPanel.Dock="Left" Content="2. "/>
+                    <Label DockPanel.Dock="Left" Content="供货商简码："/>
+                    <TextBlock  Text="{cm:GBinding VC_GHSJM}" />
+                </DockPanel>
+            </RadioButton>
+            <RadioButton  Visibility="{Binding VisibilityVC_SPGGXH}"   IsChecked="{Binding IsCheckedVC_SPGGXH}" >
+                <DockPanel LastChildFill="True">
+                    <Label DockPanel.Dock="Left" Content="规格型号："/>
+                    <TextBlock  Text="{cm:GBinding VC_SPGGXH}" />
+                </DockPanel>
+            </RadioButton>
+            <RadioButton Visibility="{Binding VisibilityVC_SPXBH}"  IsChecked="{Binding IsCheckedVC_SPXBH}">
+                <DockPanel>
+                    <Label DockPanel.Dock="Left" Content="商品编号："/>
+                    <TextBlock  Text="{cm:GBinding VC_SPXBH}" />
+                    <TextBlock  Text="至" />
+                    <TextBlock   Text="{cm:GBinding VC_SPXBHSecond}"/>
+                </DockPanel>
+            </RadioButton>
+            <RadioButton Visibility="{Binding VisibilityVC_SPPC}"  IsChecked="{Binding IsCheckedVC_SPPC}">
+                <DockPanel>
+                    <Label DockPanel.Dock="Left" Content="商品批次："/>
+                    <TextBlock  Text="{cm:GBinding VC_SPPC}" />
+                    <TextBlock  Text="至" />
+                    <TextBlock   Text="{cm:GBinding VC_SPPCSecond}"/>
+                </DockPanel>
+            </RadioButton>
+        </StackPanel>
+    </Grid>
+</UserControl>

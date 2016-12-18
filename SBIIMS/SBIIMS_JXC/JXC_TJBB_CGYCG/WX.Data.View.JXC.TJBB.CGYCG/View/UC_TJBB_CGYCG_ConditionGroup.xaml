@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="WX.Data.View.UC_TJBB_CGYCG_ConditionGroup"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cm="clr-namespace:WX.Data.View;assembly=WX.Data.View.FCustomElement"
+    xmlns:UC="clr-namespace:WX.Data.View"
+             x:Name="root"
+    Style="{StaticResource UserControlAutoSizeStyle}"
+             >
+    <UserControl.InputBindings>
+        <KeyBinding Key="Enter"  Command="{Binding CMD_Query}" Gesture="Enter"/>
+    </UserControl.InputBindings>
+    <Grid  HorizontalAlignment="Right" >
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" DataContext="{Binding D_Query2Entity}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition  Width="*"/>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="查询日期：" />
+            <DatePicker Grid.Column="1" SelectedDate="{Binding VC_CJRQ}">
+                <DatePicker.InputBindings>
+                    <KeyBinding Key="Enter" Command="{Binding CMD_Query}"/>
+                </DatePicker.InputBindings>
+            </DatePicker>
+            <Label Grid.Column="2" Content="至"/>
+            <DatePicker Grid.Column="3" SelectedDate="{Binding VC_CJRQSecond}"/>
+            <Button Grid.Column="4" DataContext="{Binding DataContext, ElementName=root}" Command="{Binding CMD_RQD}"  CommandParameter="FVM_GGXZ_CD_RQD" IsEnabled="{Binding FunctionDictionary[FVM_GGXZ_CD_RQD]}" Style="{StaticResource ButtonDateSelectStyle}"/>
+        </Grid>
+        <Grid Grid.Column="1" DataContext="{Binding D_YGSelected}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition  Width="*"/>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="采购员：" />
+            <TextBox Grid.Column="1" Text="{Binding Value,FallbackValue='所有采购员'}" Style="{StaticResource TextBoxQuerySmallReadOnlyStyle}"/>
+            <Button Grid.Column="2" DataContext="{Binding DataContext, ElementName=root}" Command="{Binding CMD_YG}"  CommandParameter="FVM_JBXX_YGWH_XZ" IsEnabled="{Binding FunctionDictionary[FVM_JBXX_YGWH_XZ]}" Style="{StaticResource ButtonConditionSelectIconStyle}"/>
+        </Grid>
+        <Button Grid.Column="2" Content="统计" Command="{Binding CMD_Query}" Style="{StaticResource ButtonQueryStyle}"/>
+    </Grid>
+</UserControl>

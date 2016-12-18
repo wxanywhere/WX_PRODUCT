@@ -1,0 +1,980 @@
+﻿    //客户消费商品明细
+    member this.GetKH_XFSPMXView (queryEntity:BQ_DJ_Advance)=
+      try
+        let sb=new SBIIMS_QueryJXCEntitiesAdvance()
+        sb.T_DJSP_KH
+        |>PSeq.filter (fun a->
+            match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+            | x,y,_ when y.HasValue ->x=y.Value
+            | _ ->true
+            &&
+            match queryEntity.VC_WPLBIDs with
+            | x when x<>null ->x|>PSeq.exists (fun b->b=a.T_SP.C_SPLB)
+            | _ ->true
+            && 
+            match a.C_KH,queryEntity.VC_JYFID with
+            | x,y when y.HasValue ->x =y.Value
+            | _ ->true
+            &&
+            match a.C_CKBZ,a.C_CCK,a.C_RCK,queryEntity.VC_CKID with
+            | true,x,_,z when z.HasValue ->x =z.Value
+            | _,_,y,z when z.HasValue ->y=z.Value
+            | _ ->true 
+            )
+        |>Seq.sortBy (fun a->a.C_CJRQ)
+        |>fun a->
+            if queryEntity.TotalCount=0 then queryEntity.TotalCount<- a|>PSeq.length
+            a  
+        |>PSeq.skip (queryEntity.PageSize * queryEntity.PageIndex)
+        |>PSeq.take queryEntity.PageSize
+        |>Seq.map (fun a->
+            match new BD_V_DJ_KH_XFSPMX_Advance() with
+            | x ->
+                x.VC_DJH<-a.C_DJH
+                x.VC_CJRQ<-a.C_CJRQ
+                match a.C_CKBZ with
+                | true ->
+                    x.VC_CK<-a.T_CK.C_MC
+                    x.VC_CKJM<-a.T_CK.C_MCJM
+                | _ ->
+                    x.VC_CK<-a.T_CK1.C_MC
+                    x.VC_CKJM<-a.T_CK1.C_MCJM
+                x.VC_DJLX<-a.T_DJLX.C_LX
+                x.VC_DJLXID<-a.C_DJLX
+                x.VC_KH<-a.T_KH.C_MC
+                match a.T_GHS with
+                | y ->
+                    x.VC_GHS<-y.C_MC
+                    x.VC_GHSJM<-y.C_MCJM
+                    x.VC_GHSXBH<-y.C_XBH
+                match a.T_YG1 with
+                | y ->
+                    x.VC_JBR<-y.C_XM
+                    x.VC_JBRJM<-y.C_XMJM
+                    x.VC_JBRXBH<-y.C_XBH
+                x.VC_CZY<-a.T_YG.C_XM
+                match a.T_SP with
+                | y ->
+                    x.VC_SP<-y.C_MC
+                    x.VC_SPXBH<-y.C_XBH
+                    x.VC_SPJM<-y.C_MCJM
+                    x.VC_SPYS<-y.T_SPYS.C_YS
+                    x.VC_SPGGXH<-y.C_GGXH
+                    x.VC_SPDW<-y.T_SPDW.C_DW
+                    x.VC_SPSCCS<-y.C_SCCS
+                x.VC_SPSL<-a.C_SL
+                x.VC_SPDJ<-a.C_ZHJ
+                x.VC_SPZJE<-a.C_ZHJE
+                x.VC_SPLRJE<-a.C_SPLRJE
+                x)
+        |>Seq.toArray 
+      with 
+      | e ->this.QueryErrorProcess<BD_V_DJ_KH_XFSPMX_Advance>(e,-1,this,GetEntitiesAdvance,queryEntity.IsReturnQueryError)
+
+    //客户消费商品汇总-按商品
+    member this.GetKH_XFSPHZ_ASPView (queryEntity:BQ_DJ_Advance)=
+      try
+        let sb=new SBIIMS_QueryJXCEntitiesAdvance()
+        sb.T_DJSP_KH
+        |>PSeq.filter (fun a->
+            match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+            | x,y,_ when y.HasValue ->x=y.Value
+            | _ ->true
+            &&
+            match queryEntity.VC_WPLBIDs with
+            | x when x<>null ->x|>PSeq.exists (fun b->b=a.T_SP.C_SPLB)
+            | _ ->true
+            && 
+            match a.C_KH,queryEntity.VC_JYFID with
+            | x,y when y.HasValue ->x =y.Value
+            | _ ->true
+            &&
+            match a.C_CKBZ,a.C_CCK,a.C_RCK,queryEntity.VC_CKID with
+            | true,x,_,z when z.HasValue ->x =z.Value
+            | _,_,y,z when z.HasValue ->y=z.Value
+            | _ ->true 
+            )
+        |>Seq.sortBy (fun a->a.C_CJRQ)
+        |>Seq.groupBy (fun a->a.C_SP)
+        |>fun a->
+            if queryEntity.TotalCount=0 then queryEntity.TotalCount<- a|>PSeq.length
+            a  
+        |>PSeq.skip (queryEntity.PageSize * queryEntity.PageIndex)
+        |>PSeq.take queryEntity.PageSize
+        |>Seq.map (fun (_,a)->
+            match new BD_V_DJ_KH_XFSPHZ_ASP_Advance() with
+            | x ->
+                match a|>Seq.head with
+                | y ->
+                    match y.T_SP with
+                    | z ->
+                        x.VC_SP<-z.C_MC
+                        x.VC_SPXBH<-z.C_XBH
+                        x.VC_SPJM<-z.C_MCJM
+                match a|>Seq.filter (fun b->b.C_CKBZ) with  //是判断C_SL>0M性能的1.3倍,是C_CK..,C_RK..直接SumBy的9.7倍
+                | y ->
+                    x.VC_XSSL<-y|>Seq.sumBy (fun b-> b.C_SL)
+                    x.VC_XSJE<-y|>Seq.sumBy (fun b->b.C_ZHJE)
+                match a|>Seq.filter (fun b->b.C_RKBZ) with
+                | y -> 
+                    x.VC_XSTHSL<- y|>Seq.sumBy (fun b->b.C_SL) |>op_UnaryNegation
+                    x.VC_XSTHJE<-y|>Seq.sumBy (fun b->b.C_ZHJE) |>op_UnaryNegation
+                x.VC_XSHJSL<-x.VC_XSSL-x.VC_XSTHSL
+                x.VC_XSHJJE<-x.VC_XSJE-x.VC_XSTHJE
+                x.VC_XSLR<-a|>Seq.sumBy (fun b->b.C_SPLRJE)
+                x.VC_XSLRL<-x.VC_XSLR/x.VC_XSHJJE
+                x)
+        |>Seq.toArray 
+      with 
+      | e ->this.QueryErrorProcess<BD_V_DJ_KH_XFSPHZ_ASP_Advance>(e,-1,this,GetEntitiesAdvance,queryEntity.IsReturnQueryError)
+
+    //客户消费商品汇总-按供货商
+    member this.GetKH_XFSPHZ_AGHSView (queryEntity:BQ_DJ_Advance)=
+      try
+        let sb=new SBIIMS_QueryJXCEntitiesAdvance()
+        sb.T_DJSP_KH
+        |>PSeq.filter (fun a->
+            match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+            | x,y,_ when y.HasValue ->x=y.Value
+            | _ ->true
+            &&
+            match queryEntity.VC_WPLBIDs with
+            | x when x<>null ->x|>PSeq.exists (fun b->b=a.T_SP.C_SPLB)
+            | _ ->true
+            && 
+            match a.C_KH,queryEntity.VC_JYFID with
+            | x,y when y.HasValue ->x =y.Value
+            | _ ->true
+            &&
+            match a.C_CKBZ,a.C_CCK,a.C_RCK,queryEntity.VC_CKID with
+            | true,x,_,z when z.HasValue ->x =z.Value
+            | _,_,y,z when z.HasValue ->y=z.Value
+            | _ ->true 
+            )
+        |>Seq.sortBy (fun a->a.C_CJRQ)
+        |>Seq.groupBy (fun a->a.C_SP,a.C_CGGHS)
+        |>fun a->
+            if queryEntity.TotalCount=0 then queryEntity.TotalCount<- a|>PSeq.length
+            a  
+        |>PSeq.skip (queryEntity.PageSize * queryEntity.PageIndex)
+        |>PSeq.take queryEntity.PageSize
+        |>Seq.map (fun (_,a)->
+            match new BD_V_DJ_KH_XFSPHZ_AGHS_Advance() with
+            | x ->
+                match a|>Seq.head with
+                | y ->
+                    match y.T_SP with
+                    | z ->
+                        x.VC_SP<-z.C_MC
+                        x.VC_SPXBH<-z.C_XBH
+                        x.VC_SPJM<-z.C_MCJM
+                    match y.T_GHS with
+                    | z ->
+                        x.VC_GHS<-z.C_MC
+                        x.VC_GHSJM<-z.C_MCJM
+                        x.VC_GHSXBH<-z.C_XBH
+                match a|>Seq.filter (fun b->b.C_CKBZ) with  //是判断C_SL>0M性能的1.3倍,是C_CK..,C_RK..直接SumBy的9.7倍
+                | y ->
+                    x.VC_XSSL<-y|>Seq.sumBy (fun b-> b.C_SL)
+                    x.VC_XSJE<-y|>Seq.sumBy (fun b->b.C_ZHJE)
+                match a|>Seq.filter (fun b->b.C_RKBZ) with
+                | y -> 
+                    x.VC_XSTHSL<- y|>Seq.sumBy (fun b->b.C_SL) |>op_UnaryNegation
+                    x.VC_XSTHJE<-y|>Seq.sumBy (fun b->b.C_ZHJE) |>op_UnaryNegation
+                x.VC_XSHJSL<-x.VC_XSSL-x.VC_XSTHSL
+                x.VC_XSHJJE<-x.VC_XSJE-x.VC_XSTHJE
+                x.VC_XSLR<-a|>Seq.sumBy (fun b->b.C_SPLRJE)
+                x.VC_XSLRL<-x.VC_XSLR/x.VC_XSHJJE
+                x)
+        |>Seq.toArray 
+      with 
+      | e ->this.QueryErrorProcess<BD_V_DJ_KH_XFSPHZ_AGHS_Advance>(e,-1,this,GetEntitiesAdvance,queryEntity.IsReturnQueryError)
+
+    //销售往来账-客户消费情况
+    member this.GetXS_WLZ_XFQKView (queryEntity:BQ_DJ_Advance)=
+      try
+        let sb=new SBIIMS_QueryJXCEntitiesAdvance()
+        sb.T_DJSP_KH.Include(FTN.T_KH).Include(FTN.T_GHS).Include(FTN.T_DJLX)
+          .Include(FTN.T_SP).Include(FTN.T_SP.+FTN.T_SPDW).Include(FTN.T_SP.+FTN.T_SPYS)
+          .Include(FTN.T_CK).Include(FTN.T_CK1).Include(FTN.T_YG1)
+        |>PSeq.filter (fun a->
+            a.C_CKBZ //所有形式的销售
+            &&
+            match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+            | x,y,_ when y.HasValue ->x=y.Value
+            | _ ->true
+            && 
+            match a.T_KH.C_MCJM,queryEntity.VC_JYFJM with //"a.T_KH.C_XMJM" 运算的时候才真正取值???
+            | x,y when y<>null ->y.ToLowerInvariant()|>x.ToLowerInvariant().StartsWith 
+            | _ ->true
+            &&
+            match a.T_KH.C_XBH,queryEntity.VC_JYFXBH,queryEntity.VC_JYFXBHSecond with //"a.T_KH.C_XBH" 运算的时候才真正取值???
+            | x,y,z when y.HasValue && z.HasValue && y.Value=Decimal.MinValue ->x<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=Decimal.MaxValue ->x>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+            | x,y,_ when y.HasValue ->x=y.Value
+            | _ ->true
+            )
+        |>Seq.map (fun a->
+            match new BD_V_XSGL_WLZ_XFQK_Advance() with
+            | x ->
+                x.VC_DJH<-a.C_DJH
+                x.VC_CJRQ<-a.C_CJRQ
+                x.VC_DJLX<-a.T_DJLX.C_LX
+                x.VC_KH<-a.T_KH.C_MC
+                x.VC_KHJM<-a.T_KH.C_MCJM
+                x.VC_KHXBH<-a.T_KH.C_XBH
+                x.VC_GHS<-a.T_GHS.C_MC
+                x.VC_CK<-
+                  match a.C_CKBZ with
+                  | true ->a.T_CK.C_MC //出
+                  | _ ->a.T_CK1.C_MC //入
+                x.VC_JBR<-a.T_YG1.C_XM
+                match a.T_SP with
+                | y ->
+                    x.VC_SPXBH<-y.C_XBH
+                    x.VC_SPJM<-y.C_MCJM
+                    x.VC_SP<-y.C_MC
+                    x.VC_SPDW<-y.T_SPDW.C_DW
+                    x.VC_SPYS<-y.T_SPYS.C_YS
+                    x.VC_SPGGXH<-y.C_GGXH
+                    x.VC_SPSCCS<-y.C_SCCS
+                x.VC_SPPC<-a.C_PC
+                x.VC_SPSL<-a.C_VSL
+                x.VC_SPDJ<-a.C_ZHJ
+                x.VC_SPZJE<-a.C_VZHJE
+                x
+            )
+        |>PSeq.toArray 
+      with 
+      | e -> this.QueryErrorProcess<BD_V_XSGL_WLZ_XFQK_Advance>(e,-1,this,GetEntitiesAdvance,Nullable<_> false)
+
+    //销售往来帐-客户退货情况
+    member this.GetXS_WLZ_KHTHView (queryEntity:BQ_DJ_Advance)=
+      try
+        let sb=new SBIIMS_QueryJXCEntitiesAdvance()
+        sb.T_DJSP_KH.Include(FTN.T_KH).Include(FTN.T_GHS).Include(FTN.T_DJLX)
+          .Include(FTN.T_SP).Include(FTN.T_SP.+FTN.T_SPDW).Include(FTN.T_SP.+FTN.T_SPYS)
+          .Include(FTN.T_CK).Include(FTN.T_CK1).Include(FTN.T_YG1)
+        |>PSeq.filter (fun a->
+            a.C_RKBZ //所有形式的退货
+            &&
+            match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+            | x,y,_ when y.HasValue ->x=y.Value
+            | _ ->true
+            && 
+            match a.T_KH.C_MCJM,queryEntity.VC_JYFJM with //"a.T_KH.C_XMJM" 运算的时候才真正取值???
+            | x,y when y<>null ->y.ToLowerInvariant()|>x.ToLowerInvariant().StartsWith 
+            | _ ->true
+            &&
+            match a.T_KH.C_XBH,queryEntity.VC_JYFXBH,queryEntity.VC_JYFXBHSecond with //"a.T_KH.C_XBH" 运算的时候才真正取值???
+            | x,y,z when y.HasValue && z.HasValue && y.Value=Decimal.MinValue ->x<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=Decimal.MaxValue ->x>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+            | x,y,_ when y.HasValue ->x=y.Value
+            | _ ->true
+            )
+        |>Seq.map (fun a->
+            match new BD_V_XSGL_WLZ_TH_Advance() with
+            | x ->
+                x.VC_DJH<-a.C_DJH
+                x.VC_CJRQ<-a.C_CJRQ
+                x.VC_DJLX<-a.T_DJLX.C_LX
+                x.VC_KH<-a.T_KH.C_MC
+                x.VC_KHJM<-a.T_KH.C_MCJM
+                x.VC_KHXBH<-a.T_KH.C_XBH
+                x.VC_GHS<-a.T_GHS.C_MC
+                x.VC_CK<-
+                  match a.C_CKBZ with
+                  | true ->a.T_CK.C_MC //出
+                  | _ ->a.T_CK1.C_MC //入
+                x.VC_JBR<-a.T_YG1.C_XM
+                match a.T_SP with
+                | y ->
+                    x.VC_SPXBH<-y.C_XBH
+                    x.VC_SPJM<-y.C_MCJM
+                    x.VC_SP<-y.C_MC
+                    x.VC_SPDW<-y.T_SPDW.C_DW
+                    x.VC_SPYS<-y.T_SPYS.C_YS
+                    x.VC_SPGGXH<-y.C_GGXH
+                    x.VC_SPSCCS<-y.C_SCCS
+                x.VC_SPPC<-a.C_PC
+                x.VC_SPSL<-a.C_SL
+                x.VC_SPDJ<-a.C_ZHJ
+                x.VC_SPZJE<-a.C_ZHJE
+                x
+            )
+        |>PSeq.toArray 
+      with 
+      | e -> this.QueryErrorProcess<BD_V_XSGL_WLZ_TH_Advance>(e,-1,this,GetEntitiesAdvance,Nullable<_> false)
+    
+
+
+    //销售员销售-销售明细
+    member this.GetXSYXS_XSMXView (queryEntity:BQ_DJ_Advance)=
+      try
+        let sb=new SBIIMS_QueryJXCEntitiesAdvance()
+        sb.T_DJSP_KH.Include(FTN.T_KH).Include(FTN.T_GHS).Include(FTN.T_DJLX)
+          .Include(FTN.T_SP).Include(FTN.T_SP.+FTN.T_SPDW).Include(FTN.T_SP.+FTN.T_SPYS)
+          .Include(FTN.T_CK).Include(FTN.T_CK1)
+          .Include(FTN.T_YG).Include(FTN.T_YG1)
+          .Include(FTN.T_DJ_KH).Include(FTN.T_DJ_KH.+FTN.T_QFMX_KH)
+        |>PSeq.filter (fun a->
+            match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+            | x,y,_ when y.HasValue ->x=y.Value
+            | _ ->true
+            && 
+            match a.C_JBR,queryEntity.VC_JBRID with
+            | x,y when y.HasValue ->x =y.Value
+            | _ ->true
+            )
+        |>Seq.map (fun a->
+            match new BD_V_TJBB_XSYXS_XSMX_Advance() with
+            | x ->
+                x.VC_DJH<-a.C_DJH
+                x.VC_CJRQ<-a.C_CJRQ
+                match a.C_CKBZ with
+                | true ->
+                    x.VC_CK<-a.T_CK.C_MC
+                    x.VC_CKJM<-a.T_CK.C_MCJM
+                | _ ->
+                    x.VC_CK<-a.T_CK1.C_MC
+                    x.VC_CKJM<-a.T_CK1.C_MCJM
+                x.VC_DJLX<-a.T_DJLX.C_LX
+                x.VC_DJLXID<-a.C_DJLX
+                match a.T_DJ_KH with
+                | y ->
+                    x.VC_DJYZQJE<-y.C_YZQJE
+                    x.VC_DJYHJE<-y.C_DJYHJE
+                    x.VC_DJQFJE<-
+                      match y.C_KDJQBZ with //开单即结清标志,提高性能
+                      | true ->0M
+                      | _ ->match y.T_QFMX_KH??? with null ->0M | x ->x.C_QFJE 
+                    x.VC_DJSZQJE<-x.VC_DJYZQJE-x.VC_DJYHJE-x.VC_DJQFJE
+                    x.VC_DJLRJE<-y.C_DJLRJE
+                    x.VC_DJXSLRL<-y.C_DJJYLRL //单据交易利润率
+                    x.VC_DJBZ<-y.C_BZ
+                x.VC_KH<-a.T_KH.C_MC
+                match a.T_GHS with
+                | y ->
+                    x.VC_GHS<-y.C_MC
+                    x.VC_GHSJM<-y.C_MCJM
+                    x.VC_GHSXBH<-y.C_XBH
+                match a.T_YG1 with
+                | y ->
+                    x.VC_JBR<-y.C_XM
+                    x.VC_JBRJM<-y.C_XMJM
+                    x.VC_JBRXBH<-y.C_XBH
+                x.VC_CZY<-a.T_YG.C_XM
+                match a.T_SP with
+                | y ->
+                    x.VC_SP<-y.C_MC
+                    x.VC_SPXBH<-y.C_XBH
+                    x.VC_SPJM<-y.C_MCJM
+                    x.VC_SPYS<-y.T_SPYS.C_YS
+                    x.VC_SPGGXH<-y.C_GGXH
+                    x.VC_SPDW<-y.T_SPDW.C_DW
+                    x.VC_SPSCCS<-y.C_SCCS
+                x.VC_SPSL<-a.C_SL
+                x.VC_SPDJ<-a.C_ZHJ
+                x.VC_SPZJE<-a.C_ZHJE
+                x.VC_SPLRJE<-a.C_SPLRJE
+                x
+            )
+        |>Seq.toArray 
+      with 
+      | e ->this.QueryErrorProcess<BD_V_TJBB_XSYXS_XSMX_Advance>(e,-1,this,GetEntitiesAdvance,queryEntity.IsReturnQueryError)
+
+
+ 
+ 
+    //销售往来帐-客户消费分析-按客户流失
+		//VC_KHLXR获取相当于In方式查询，性能???
+    member this.GetXS_WLZ_XFTJ_ALSKHView (queryEntity:BQ_DJ_Advance)=
+      try
+        let sb=new SBIIMS_QueryJXCEntitiesAdvance()
+        sb.T_DJSP_KH.Include(FTN.T_KH).Include(FTN.T_KH.+FTN.T_DQ).Include(FTN.T_KH.+FTN.T_KHLX)
+          .Include(FTN.T_KH.+FTN.T_KHDJ).Include(FTN.T_KH.+FTN.T_ZZ_KH)
+          .Include(FTN.T_KH.+FTN.T_KHYWY)
+          .Include(FTN.T_SP).Include(FTN.T_SP.+FTN.T_SPDW).Include(FTN.T_SP.+FTN.T_SPYS)
+        |>PSeq.filter (fun a->
+            match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+            | x,y,_ when y.HasValue ->x=y.Value
+            | _ ->true
+            )
+        |>Seq.groupBy (fun a->a.C_KH)
+        |>fun a->
+            if queryEntity.TotalCount=0 then queryEntity.TotalCount<- a|>PSeq.length
+            a
+        //排序...  
+        |>PSeq.skip (queryEntity.PageSize * queryEntity.PageIndex)
+        |>PSeq.take queryEntity.PageSize
+        |>Seq.map (fun (a,b)->
+            match new BD_V_XSGL_WLZ_XFTJ_ALSKH_Advance() with
+            | x->
+                match b|>Seq.head with
+                | y ->
+                    match y.T_KH with
+                    | z ->
+                        x.VC_KH<-z.C_MC
+                        x.VC_KHLXR<-
+                          match z.C_LXR with
+                          | w when w.HasValue ->
+                              match z.T_KHYWY|>Seq.tryFind (fun c->c.C_ID=w.Value) with //C_LXR字段无约束
+                              | Some p ->p.C_XM
+                              | _ ->String.Empty
+                          | _ ->String.Empty
+                        x.VC_KHLXDH<-z.C_LXDH
+                        x.VC_KHLX<-z.T_KHLX.C_LX
+                        x.VC_KHDJ<-z.T_KHDJ.C_DJ
+                        x.VC_KHDQ<-z.T_DQ.C_MC
+                        match z.T_ZZ_KH with
+                        | w ->
+                            x.VC_LSXFHJSL<-w.C_XFSL-w.C_XFTHSL
+                            x.VC_LSXFHJJE<-w.C_XFJE-w.C_XFTHJE
+                            x.VC_LSXFLRJE<-w.C_WFLRJE
+                x)
+        |>Seq.toArray 
+      with 
+      | e ->this.QueryErrorProcess<BD_V_XSGL_WLZ_XFTJ_ALSKH_Advance>(e,-1,this,GetEntitiesAdvance,queryEntity.IsReturnQueryError)
+
+ 
+ 
+    //销售往来帐-客户账务
+    ////实付金额有必要从台账中按时间段条件获取吗???
+    member this.GetXS_WLZ_KHZWView (queryEntity:BQ_DJ_Advance)=
+      try
+        let sb=new SBIIMS_QueryJXCEntitiesAdvance()
+        (
+        sb.T_DJ_KH.Include(FTN.T_KH)
+        |>PSeq.filter (fun a->
+            match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+            | x,y,_ when y.HasValue ->x=y.Value
+            | _ ->true
+            && 
+            match a.T_KH,queryEntity.VC_JYFJM with
+            | x,y when y<>null ->y.ToLowerInvariant()|>x.C_MCJM.ToLowerInvariant().StartsWith 
+            | _ ->true
+            &&
+            match a.T_KH,queryEntity.VC_JYFXBH,queryEntity.VC_JYFXBHSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=Decimal.MinValue ->x.C_XBH<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=Decimal.MaxValue ->x.C_XBH>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x.C_XBH>=y.Value && x.C_XBH<=z.Value
+            | x,y,_ when y.HasValue ->x.C_XBH=y.Value
+            | _ ->true
+            )
+        |>PSeq.groupBy (fun a->a.C_KH)
+        |>Seq.map (fun (a,b)->
+            match new BD_V_XSGL_WLZ_KHZW_Advance() with
+            | x->
+                match b|>PSeq.head with
+                | y ->
+                    x.VC_KHID<-y.C_KH
+                    x.VC_KHXBH<-y.T_KH.C_XBH
+                    x.VC_KH<-y.T_KH.C_MC //Group之后必然有元素
+                x.VC_XFJE<-b|>PSeq.sumBy (fun c->c.C_CKJE)
+                x.VC_XFTHJE<-b|>PSeq.sumBy (fun c->c.C_RKJE) |>op_UnaryNegation
+                x.VC_XFHJJE<-x.VC_XFJE-x.VC_XFTHJE
+                x.VC_XFYHHJJE<-b|>PSeq.sumBy (fun c->c.C_DJYHJE) |>op_UnaryNegation
+                x)
+        ,
+        sb.T_JYTZ_KH.Include(FTN.T_KH)  //帐务部分必须用台帐查询，便于和单据部分进行核对
+        |>PSeq.filter (fun a->
+            match a.C_JYLB with
+            | 1uy | 2uy | 3uy | 11uy | 12uy | 13uy ->true
+            | _ ->false
+            &&
+            match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+            | x,y,_ when y.HasValue ->x=y.Value
+            | _ ->true
+            && 
+            match a.T_KH,queryEntity.VC_JYFJM with
+            | x,y when y<>null ->y.ToLowerInvariant()|>x.C_MCJM.ToLowerInvariant().StartsWith 
+            | _ ->true
+            &&
+            match a.T_KH,queryEntity.VC_JYFXBH,queryEntity.VC_JYFXBHSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=Decimal.MinValue ->x.C_XBH<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=Decimal.MaxValue ->x.C_XBH>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x.C_XBH>=y.Value && x.C_XBH<=z.Value
+            | x,y,_ when y.HasValue ->x.C_XBH=y.Value
+            | _ ->true
+            )
+        |>PSeq.groupBy (fun a->a.C_KH)
+        |>Seq.map (fun (a,b)->
+            match new BD_V_XSGL_WLZ_KHZW_Advance() with
+            | x->
+                x.VC_KHID<-a
+                match 
+                  b|>Seq.filter (fun c->c.C_JYLB=1uy)|>Seq.sumBy (fun c->c.C_JYJE) |>op_UnaryNegation, //应收为负
+                  b|>Seq.filter (fun c->c.C_JYLB=11uy)|>Seq.sumBy (fun c->c.C_JYJE) |>op_UnaryNegation  //应付为负
+                  with
+                | y,z ->
+                    x.VC_WFYSJE<-y-z |>op_UnaryNegation //我方应收金额，应和消费合计VC_XFHJJE相等
+                match 
+                  b|>Seq.filter (fun c->c.C_JYLB=2uy)|>Seq.sumBy (fun c->c.C_JYJE), //实收为正
+                  b|>Seq.filter (fun c->c.C_JYLB=12uy)|>Seq.sumBy (fun c->c.C_JYJE) //实付为正
+                  with
+                | y,z ->
+                    x.VC_WFSSJE<-y-z //我方实收金额
+                match 
+                  b|>Seq.filter (fun c->c.C_JYLB=3uy)|>Seq.sumBy (fun c->c.C_JYJE), //收款优惠，优先为正
+                  b|>Seq.filter (fun c->c.C_JYLB=13uy)|>Seq.sumBy (fun c->c.C_JYJE) //付款优惠，优先为正
+                  with
+                | y,z ->
+                    x.VC_WFYHJE<-y-z //我方实收优惠金额
+                x.VC_WFWSJE<-x.VC_WFYSJE-x.VC_WFSSJE-x.VC_WFYHJE
+                x)
+        )
+        |> fun (a,b)->
+            PSeq.join a b (fun a->a.VC_KHID) (fun b->b.VC_KHID) (fun c d ->
+              c.VC_WFYSJE<-d.VC_WFYSJE
+              c.VC_WFSSJE<-d.VC_WFSSJE
+              c.VC_WFYHJE<-d.VC_WFYHJE
+              c.VC_WFWSJE<-d.VC_WFWSJE
+              c
+              )
+        |>fun a->
+            if queryEntity.TotalCount=0 then queryEntity.TotalCount<- a|>PSeq.length
+            a  
+        |>PSeq.skip (queryEntity.PageSize * queryEntity.PageIndex)
+        |>PSeq.take queryEntity.PageSize
+        |>PSeq.toArray 
+        |>fun a ->
+            if a.Length>0 then a.[0].TotalCount<-queryEntity.TotalCount
+            a
+      with 
+      | e ->this.QueryErrorProcess<BD_V_XSGL_WLZ_KHZW_Advance>(e,-1,this,GetEntitiesAdvance,queryEntity.IsReturnQueryError)
+
+
+
+(*
+    //营业分析-按月分析, 直接统计，计算量较大，性能较差，且历史月份的库存信息无法统计，除非在单据中加入库存信息，不过代价较大，建立T_YB._.(月报)表可以提高性能，
+    member this.GetTJ_YYFX_AYView (queryEntity:BQ_DJ_Advance)=
+      try
+        let sb=new SBIIMS_QueryJXCEntitiesAdvance()
+        (
+        sb.T_DJ_GHS
+        |>PSeq.filter (fun a->
+            match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+            | x,y,_ when y.HasValue ->x=y.Value
+            | _ ->true
+            )
+        |>Seq.groupBy (fun a->a.C_CJRQ.Year,a.C_CJRQ.Month)  //需同时取年数和月数成组，已测试
+        |>Seq.map (fun ((ax,ay),b)->
+            match new BD_V_TJBB_YYFX_AY_Advance() with
+            | x ->
+                x.VC_YBY<-new DateTime(ax,ay,1) //显示的时候将天去掉
+                x.VC_CGHJSL<-b|>Seq.sumBy (fun c->c.C_CKSL+c.C_RKSL) |>op_UnaryNegation
+                x.VC_CGHJJE<-b|>Seq.sumBy (fun c->c.C_YZQJE) |>op_UnaryNegation
+                x)
+        ,
+        sb.T_DJ_KH
+        |>PSeq.filter (fun a->
+            match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+            | x,y,_ when y.HasValue ->x=y.Value
+            | _ ->true
+            )
+        |>Seq.groupBy (fun a->a.C_CJRQ.Year,a.C_CJRQ.Month)  //需同时取年数和月数成组，已测试
+        |>Seq.map (fun ((ax,ay),b)->
+            match new BD_V_TJBB_YYFX_AY_Advance() with
+            | x ->
+                x.VC_YBY<-new DateTime(ax,ay,1) //显示的时候将天去掉
+                x.VC_XSHJSL<-b|>Seq.sumBy (fun c->c.C_CKSL+c.C_RKSL)
+                x.VC_XSHJJE<-b|>Seq.sumBy (fun c->c.C_YZQJE) 
+                x.VC_XSCBHJJE<-b|>Seq.sumBy (fun c->c.C_CKCBJE+c.C_RKCBJE)
+                x.VC_XSLR<-b|>Seq.sumBy (fun c->c.C_DJLRJE) 
+                x.VC_XSLRL<-x.VC_XSLR/x.VC_XSHJJE
+                x)
+        )
+        |>fun (a,b)->
+            PSeq.join a b (fun a->a.VC_YBY) (fun b->b.VC_YBY) (fun c d ->
+              d.VC_CGHJSL<-c.VC_CGHJSL
+              d.VC_CGHJJE<-C_VC_CGHJJE
+              d)
+        |>PSeq.toArray 
+      with 
+      | e ->this.QueryErrorProcess<BD_V_TJBB_YYFX_AY_Advance>(e,-1,this,GetEntitiesAdvance,queryEntity.IsReturnQueryError)
+
+*)
+
+(* Right backup without be tested
+    member this.GetGHSZWView (queryEntity:BQ_DJ_Advance)=
+      try
+        let sb=new SBIIMS_QueryJXCEntitiesAdvance()
+        match 
+          (sb.T_DJ_GHS.Include(FTN.T_GHS)
+          |>PSeq.filter (fun a->
+              match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+              | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+              | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+              | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+              | x,y,_ when y.HasValue ->x=y.Value
+              | _ ->true
+              && 
+              match a.T_GHS,queryEntity.VC_JYFJM with
+              | x,y when y<>null ->y.ToLowerInvariant()|>x.C_MCJM.ToLowerInvariant().StartsWith 
+              | _ ->true
+              &&
+              match a.T_GHS,queryEntity.VC_JYF with
+              | x,y when y<>null ->y.ToLowerInvariant()|>x.C_MC.ToLowerInvariant().StartsWith 
+              | _ ->true
+              && 
+              match a.T_GHS,queryEntity.VC_JYFXBH,queryEntity.VC_JYFXBHSecond with
+              | x,y,z when y.HasValue && z.HasValue && y.Value=Decimal.MinValue ->x.C_XBH<=z.Value
+              | x,y,z when y.HasValue && z.HasValue && z.Value=Decimal.MaxValue ->x.C_XBH>=y.Value 
+              | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x.C_XBH>=y.Value && x.C_XBH<=z.Value
+              | x,y,_ when y.HasValue ->x.C_XBH=y.Value
+              | _ ->true
+              )
+          |>PSeq.groupBy (fun a->a.C_GHS)
+          |>Seq.map (fun (a,b)->
+              a,  
+              (
+              (b|>PSeq.head).T_GHS.C_MC,
+              b|>PSeq.sumBy(fun c->c.C_RKJE),
+              b|>PSeq.sumBy(fun c->c.C_CKJE),
+              b|>PSeq.sumBy(fun c->c.C_DJYHJE),
+              b|>PSeq.sumBy(fun c->c.C_YZQJE),
+              b|>PSeq.sumBy(fun c->c.C_SZQJE)
+              )
+              )
+            ,
+            sb.T_DJSP_KH.Include(FTN.T_GHS)
+            |>PSeq.filter (fun a->
+                match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+                | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+                | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+                | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+                | x,y,_ when y.HasValue ->x=y.Value
+                | _ ->true
+                && 
+                match a.T_GHS,queryEntity.VC_JYFJM with
+                | x,y when y<>null ->y.ToLowerInvariant()|>x.C_MCJM.ToLowerInvariant().StartsWith 
+                | _ ->true
+                &&
+                match a.T_GHS,queryEntity.VC_JYF with
+                | x,y when y<>null ->y.ToLowerInvariant()|>x.C_MC.ToLowerInvariant().StartsWith 
+                | _ ->true
+                && 
+                match a.T_GHS,queryEntity.VC_JYFXBH,queryEntity.VC_JYFXBHSecond with
+                | x,y,z when y.HasValue && z.HasValue && y.Value=Decimal.MinValue ->x.C_XBH<=z.Value
+                | x,y,z when y.HasValue && z.HasValue && z.Value=Decimal.MaxValue ->x.C_XBH>=y.Value 
+                | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x.C_XBH>=y.Value && x.C_XBH<=z.Value
+                | x,y,_ when y.HasValue ->x.C_XBH=y.Value
+                | _ ->true
+                )
+            |>PSeq.groupBy (fun a->a.C_CGGHS)
+            |>Seq.map (fun (a,b)->
+                a, 
+                ( 
+                b|>PSeq.sumBy(fun c->c.C_CKJE),
+                b|>PSeq.sumBy(fun c->c.C_RKJE),
+                b|>PSeq.sumBy(fun c->c.C_CKJE-c.C_RKJE)
+                )
+                )
+            )  with
+        | (x,y) -> 
+            PSeq.join x y (fun (a,_)->a) (fun (b,_)->b) (fun (_,(vc_GHS,vc_CGJE,vc_CGTHJE,vc_CGYHJE,vc_WFYFJE,vc_WFSFJE)) (_,(vc_XSJE,vc_XSTHJE,vc_XSHJJE)) ->
+            vc_GHS,vc_CGJE,vc_CGTHJE,vc_CGYHJE,vc_WFYFJE,vc_WFSFJE,vc_XSJE,vc_XSTHJE,vc_XSHJJE) 
+        |>fun a->
+            if queryEntity.TotalCount=0 then queryEntity.TotalCount<- a|>PSeq.length
+            a  
+        |>PSeq.skip (queryEntity.PageSize * queryEntity.PageIndex)
+        |>PSeq.take queryEntity.PageSize
+        |>Seq.map (fun (vc_GHS,vc_CGJE,vc_CGTHJE,vc_CGYHJE,vc_WFYFJE,vc_WFSFJE,vc_XSJE,vc_XSTHJE,vc_XSHJJE)->
+            match new BD_V_JHGL_WLZ_GHSZW_Advance() with
+            | entity->
+                entity.VC_GHS<-vc_GHS
+                entity.VC_CGJE<-vc_CGJE
+                entity.VC_CGTHJE<-vc_CGTHJE
+                entity.VC_CGYHJE<-vc_CGYHJE
+                entity.VC_WFYFJE<-vc_WFYFJE
+                entity.VC_WFSFJE<-vc_WFSFJE
+                entity.VC_WFWFJE<-vc_WFYFJE-vc_CGYHJE-vc_WFSFJE
+                entity.VC_XSJE<-vc_XSJE
+                entity.VC_XSTHJE<-vc_XSTHJE
+                entity.VC_XSHJJE<-vc_XSHJJE
+                entity)
+        |>PSeq.toArray 
+        |>fun a ->
+            if a.Length>0 then a.[0].TotalCount<-queryEntity.TotalCount
+            a
+      with 
+      | e ->this.QueryErrorProcess<BD_V_JHGL_WLZ_GHSZW_Advance>(e,-1,this,GetEntitiesAdvance,queryEntity.IsReturnQueryError)
+
+*)
+
+  (*
+    member this.GetGHSZWView (queryEntity:BQ_DJ_Advance)=
+      try
+        let sb=new SBIIMS_QueryJXCEntitiesAdvance()
+        sb.T_DJ_GHS.Include(FTN.T_GHS)
+        |>PSeq.filter (fun a->
+            match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+            | x,y,_ when y.HasValue ->x=y.Value
+            | _ ->true
+            && 
+            match a.T_GHS,queryEntity.VC_JYFJM with
+            | x,y when y<>null ->y.ToLowerInvariant()|>x.C_MCJM.ToLowerInvariant().StartsWith 
+            | _ ->true
+            &&
+            match a.T_GHS,queryEntity.VC_JYF with
+            | x,y when y<>null ->y.ToLowerInvariant()|>x.C_MC.ToLowerInvariant().StartsWith 
+            | _ ->true
+            && 
+            match a.T_GHS,queryEntity.VC_JYFXBH,queryEntity.VC_JYFXBHSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=Decimal.MinValue ->x.C_XBH<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=Decimal.MaxValue ->x.C_XBH>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x.C_XBH>=y.Value && x.C_XBH<=z.Value
+            | x,y,_ when y.HasValue ->x.C_XBH=y.Value
+            | _ ->true
+            )
+        |>PSeq.groupBy (fun a->a.C_GHS)
+        |>Seq.map (fun (a,b)->
+            a,  
+            (b|>PSeq.head).T_GHS.C_MC,
+            b|>PSeq.sumBy(fun c->c.C_RKJE),
+            b|>PSeq.sumBy(fun c->c.C_CKJE),
+            b|>PSeq.sumBy(fun c->c.C_DJYHJE),
+            b|>PSeq.sumBy(fun c->c.C_YZQJE),
+            b|>PSeq.sumBy(fun c->c.C_SZQJE)
+            )
+        |>fun a->
+            if queryEntity.TotalCount=0 then queryEntity.TotalCount<- a|>PSeq.length
+            a  
+        |>PSeq.skip (queryEntity.PageSize * queryEntity.PageIndex)
+        |>PSeq.take queryEntity.PageSize
+        |>Seq.map (fun (c_GHS,vc_GHS,c_RKJE,c_CKJE,C_DJYHJE,c_YZQJE,c_SZQJE)->
+            match new BD_V_JHGL_WLZ_GHSZW_Advance() with
+            | entity->
+                entity.VC_GHSID<-c_GHS
+                entity.VC_GHS<-vc_GHS
+                entity.VC_CGJE<-c_RKJE
+                entity.VC_CGTHJE<-c_CKJE
+                entity.VC_CGYHJE<-C_DJYHJE
+                entity.VC_WFYFJE<-c_YZQJE
+                entity.VC_WFSFJE<-c_SZQJE
+                entity.VC_WFWFJE<-c_YZQJE-C_DJYHJE-c_SZQJE
+                entity)
+        |>fun a->
+            sb.T_DJSP_KH
+            |>PSeq.filter (fun b->
+                a|>PSeq.exists (fun c->c.VC_GHSID=b.C_CGGHS)
+                &&
+                match b.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+                | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+                | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+                | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+                | x,y,_ when y.HasValue ->x=y.Value
+                | _ ->true
+                )
+          |>PSeq.groupBy (fun b->b.C_
+          |>PSeq.map(fun b->
+              match a|>PSeq.find (fun c->c.VC_GHSID=b.C_CGGHS) with
+              | entity ->
+                  entity.VC_XSJE<-b
+              )
+
+        |>PSeq.toArray 
+        |>fun a ->
+            if a.Length>0 then a.[0].TotalCount<-queryEntity.TotalCount
+            a
+      with 
+      | e ->this.QueryErrorProcess<BD_V_JHGL_WLZ_GHSZW_Advance>(e,-1,this,GetEntitiesAdvance,queryEntity.IsReturnQueryError)
+*)
+//------------------------------------------------------------
+//**处理方式较差的参考
+    member this.GetKHZQQKView (queryEntity:BQ_JYTZ_Advance)=
+      try
+        let sb=new SBIIMS_QueryJXCEntitiesAdvance()
+        sb.T_JYTZ_KH.Include(FTN.T_KH).Include(FTN.T_DJLX)
+        |>PSeq.filter (fun a->
+            match a.C_SZLX with
+            | 2uy ->true  //收支类型为收入
+            | _ ->false
+            && 
+            match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+            | x,y,_ when y.HasValue ->x=y.Value
+            | _ ->true
+            && 
+            match a.T_KH,queryEntity.VC_JYFJM with
+            | x,y when y<>null ->y.ToLowerInvariant()|>x.C_MCJM.ToLowerInvariant().StartsWith 
+            | _ ->true
+            &&
+            match a.T_KH,queryEntity.VC_JYF with
+            | x,y when y<>null ->y.ToLowerInvariant()|>x.C_MC.ToLowerInvariant().StartsWith 
+            | _ ->true
+            && 
+            match a.T_KH,queryEntity.VC_JYFXBH,queryEntity.VC_JYFXBHSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=Decimal.MinValue ->x.C_XBH<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=Decimal.MaxValue ->x.C_XBH>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x.C_XBH>=y.Value && x.C_XBH<=z.Value
+            | x,y,_ when y.HasValue ->x.C_XBH=y.Value
+            | _ ->true
+            )
+        |>fun a->
+            match sb.T_DJ_KH.Include(FTN.T_YG).Include(FTN.T_YG1).Include(FTN.T_QFMX_KH) with
+            | x ->
+                PSeq.groupJoin a x (fun c->c.C_JYPJ) (fun d->d.C_ID) (fun c d->
+                  match new BD_V_XSGL_WLZ_KHZQ_Advance() with
+                  | y ->
+                      match d|>PSeq.headOrDefault with
+                      | Some z ->
+                          y.VC_CJRQ<-z.C_CJRQ
+                          y.VC_YZQJE<-z.C_YZQJE
+                          y.VC_DJYHJE<-z.C_DJYHJE
+                          y.VC_DJZQJE<-z.C_DJZQJE //通过单据支付的部分
+                          match z.C_KDJQBZ with //开单即结清标志，提高关联性能
+                          | true ->
+                              y.VC_QFJE<-0M
+                              y.VC_SZQJE<-z.C_YZQJE-z.C_DJYHJE //不能取单据中的实支取金额
+                          | _ ->
+                              y.VC_QFJE<-match z.T_QFMX_KH with null ->0M | z ->z.C_QFJE  
+                              y.VC_SZQJE<-z.C_YZQJE-z.C_DJYHJE-y.VC_QFJE //不能取单据中的实支取金额
+                          y.VC_DJJBR<-z.T_YG1.C_XM
+                          y.VC_DJCZY<-z.T_YG.C_XM
+                      | _ ->()
+                      y.VC_JYPJLX<-c.T_DJLX1.C_LX
+                      y.VC_JYPJ<-c.C_JYPJ
+                      y.VC_JYPJLSH<-c.C_JYPJLSH
+                      y.VC_GLPJ<-c.C_GLPJ
+                      y.VC_GLPJLSH<-c.C_GLPJLSH
+                      y.VC_JYRQ<-c.C_CJRQ
+                      y.VC_KH<-c.T_KH.C_MC
+                      y.VC_JYJE<-c.C_JYJE
+                      y.VC_JYJBR<-c.T_YG1.C_XM
+                      y.VC_JYCZY<-c.T_YG.C_XM
+                      y
+                  )
+        |>PSeq.toArray
+      with 
+      | e ->this.QueryErrorProcess<BD_V_XSGL_WLZ_KHZQ_Advance>(e,-1,this,GetEntitiesAdvance,queryEntity.IsReturnQueryError)
+
+(*
+    //进货-往来帐-我方付款情况-按单据, 字表查询相当于使用了In方式的子查询，性能可能较差，待测试???
+    member this.GetJH_WLZ_WFFKQK_ADJView (queryEntity:BQ_JYTZ_Advance)=
+      try
+        let sb=new SBIIMS_QueryJXCEntitiesAdvance()
+        sb.T_DJ_GHS
+          .Include(FTN.T_GHS)
+          .Include(FTN.T_CK1).Include(FTN.T_CK)
+          .Include(FTN.T_YG1).Include(FTN.T_YG)
+        |>PSeq.filter (fun a->
+            match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=DateTime.MinValue ->x<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=DateTime.MaxValue ->x>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+            | x,y,_ when y.HasValue ->x=y.Value
+            | _ ->true
+            && 
+            match a.T_GHS,queryEntity.VC_JYFJM with
+            | x,y when y<>null ->y.ToLowerInvariant()|>x.C_MCJM.ToLowerInvariant().StartsWith 
+            | _ ->true
+            &&
+            match a.T_GHS,queryEntity.VC_JYF with
+            | x,y when y<>null ->y.ToLowerInvariant()|>x.C_MC.ToLowerInvariant().StartsWith 
+            | _ ->true
+            && 
+            match a.T_GHS,queryEntity.VC_JYFXBH,queryEntity.VC_JYFXBHSecond with
+            | x,y,z when y.HasValue && z.HasValue && y.Value=Decimal.MinValue ->x.C_XBH<=z.Value
+            | x,y,z when y.HasValue && z.HasValue && z.Value=Decimal.MaxValue ->x.C_XBH>=y.Value 
+            | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x.C_XBH>=y.Value && x.C_XBH<=z.Value
+            | x,y,_ when y.HasValue ->x.C_XBH=y.Value
+            | _ ->true
+            )
+        |>fun a->
+            if queryEntity.TotalCount=0 then queryEntity.TotalCount<- a|>PSeq.length
+            a  
+        |>PSeq.skip (queryEntity.PageSize * queryEntity.PageIndex)
+        |>PSeq.take queryEntity.PageSize
+        |>Seq.map (fun a->
+            match new BD_V_JHGL_WLZ_WFFKQK_ADJ_Advance() with
+            | x->
+                x.VC_CJRQ<-a.C_CJRQ
+                x.VC_DJH<-a.C_DJH
+                x.VC_DJLX<-a.T_DJLX.C_LX
+                x.VC_GHS<-a.T_GHS.C_MC
+                x.VC_CK<-
+                  match a.C_RKBZ with
+                  | true ->a.T_CK1.C_MC
+                  | _ ->a.T_CK.C_MC
+                x.VC_WFYFJE<-a.C_YZQJE |>op_UnaryNegation  
+                x.VC_DJYHJE<-a.C_DJYHJE
+                match a.C_KDJQBZ with //开单即结清标志，提高关联性能
+                | true ->
+                    x.VC_WFWFJE<-0M    //不能使用台账按查询单据的时间段来查询欠费，使用单据最终的欠费金额才符合实际要求
+                    x.VC_WFSFJE<-x.VC_WFYFJE-x.VC_DJYHJE 
+                | _ ->
+                    x.VC_WFWFJE<-match a.T_QFMX_GHS with null ->0M | y ->y.C_QFJE |>op_UnaryNegation //正负设计和单据一致   
+                    x.VC_WFSFJE<-x.VC_WFYFJE-x.VC_DJYHJE-x.VC_WFWFJE 
+                x.VC_JBR<-a.T_YG1.C_XM 
+                x.VC_CZY<-a.T_YG.C_XM
+                x.VC_DJZT<-a.C_JQBZ
+                x.VC_BZ<-a.C_BZ
+                x.BD_V_JHGL_WLZ_WFFKQK_ADJ_FKMX_AdvanceView<-
+                  sb.T_JYTZ_GHS
+                    .Include(FTN.T_GHS).Include(FTN.T_DJLX)
+                  |>Seq.filter (fun b->
+                      b.C_JYPJ=a.C_ID
+                      &&
+                      match a.C_CJRQ,queryEntity.VC_CJRQ,queryEntity.VC_CJRQSecond with 
+                      | x,y,z when y.HasValue && z.HasValue && z.Value>y.Value ->x>=y.Value && x<=z.Value
+                      | x,y,_ when y.HasValue ->x=y.Value
+                      | _ ->true
+                      )
+                   |>Seq.map (fun b->
+                       match new BD_V_JHGL_WLZ_WFFKQK_ADJ_FKMX_Advance() with
+                       | y ->
+                           y.VC_FKPJH<-b.C_GLPJLSH
+                           y.VC_FKRQ<-b.C_CJRQ
+                           y.VC_FKPJLX<-b.T_DJLX.C_LX
+                           y.VC_FKJE<-b.C_JYJE
+                           y.VC_QFJE<-b.C_QFJE
+                           y.VC_JYJBR<-b.T_YG1.C_XM
+                           y.VC_JYCZY<-b.T_YG.C_XM
+                           y)
+                   |>Seq.toArray
+                x)
+        |>Seq.toArray
+      with 
+      | e ->this.QueryErrorProcess<BD_V_JHGL_WLZ_WFFKQK_ADJ_Advance>(e,-1,this,GetEntitiesAdvance,queryEntity.IsReturnQueryError)
+

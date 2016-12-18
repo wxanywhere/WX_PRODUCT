@@ -1,0 +1,1003 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WX.Data.DataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SBIIMS_JXC_TJBB_CGYCGEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="T_CK" EntityType="WX.Data.DataModel.T_CK" />
+    <EntitySet Name="T_DJ_JHGL" EntityType="WX.Data.DataModel.T_DJ_JHGL" />
+    <EntitySet Name="T_DJLX" EntityType="WX.Data.DataModel.T_DJLX" />
+    <EntitySet Name="T_DJSP_JHGL" EntityType="WX.Data.DataModel.T_DJSP_JHGL" />
+    <EntitySet Name="T_GHS" EntityType="WX.Data.DataModel.T_GHS" />
+    <EntitySet Name="T_KCSP_DQZT" EntityType="WX.Data.DataModel.T_KCSP_DQZT" />
+    <EntitySet Name="T_QFMX_JHGL" EntityType="WX.Data.DataModel.T_QFMX_JHGL" />
+    <EntitySet Name="T_RZ" EntityType="WX.Data.DataModel.T_RZ" />
+    <EntitySet Name="T_SP" EntityType="WX.Data.DataModel.T_SP" />
+    <EntitySet Name="T_SPDW" EntityType="WX.Data.DataModel.T_SPDW" />
+    <EntitySet Name="T_SPYS" EntityType="WX.Data.DataModel.T_SPYS" />
+    <EntitySet Name="T_YG" EntityType="WX.Data.DataModel.T_YG" />
+    <AssociationSet Name="FK_T_CK_C_CZY_T_YG" Association="WX.Data.DataModel.FK_T_CK_C_CZY_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_CK" EntitySet="T_CK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_CK_C_FZR_T_YG" Association="WX.Data.DataModel.FK_T_CK_C_FZR_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_CK" EntitySet="T_CK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_CK_C_JBR_T_YG" Association="WX.Data.DataModel.FK_T_CK_C_JBR_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_CK" EntitySet="T_CK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DJ_JHGL_C_CCK_T_CK" Association="WX.Data.DataModel.FK_T_DJ_JHGL_C_CCK_T_CK">
+      <End Role="T_CK" EntitySet="T_CK" />
+      <End Role="T_DJ_JHGL" EntitySet="T_DJ_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DJ_JHGL_C_RCK_T_CK" Association="WX.Data.DataModel.FK_T_DJ_JHGL_C_RCK_T_CK">
+      <End Role="T_CK" EntitySet="T_CK" />
+      <End Role="T_DJ_JHGL" EntitySet="T_DJ_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DJSP_JHGL_C_CCK_T_CK" Association="WX.Data.DataModel.FK_T_DJSP_JHGL_C_CCK_T_CK">
+      <End Role="T_CK" EntitySet="T_CK" />
+      <End Role="T_DJSP_JHGL" EntitySet="T_DJSP_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DJSP_JHGL_C_RCK_T_CK" Association="WX.Data.DataModel.FK_T_DJSP_JHGL_C_RCK_T_CK">
+      <End Role="T_CK" EntitySet="T_CK" />
+      <End Role="T_DJSP_JHGL" EntitySet="T_DJSP_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_QFMX_JHGL_C_CCK_T_CK" Association="WX.Data.DataModel.FK_T_QFMX_JHGL_C_CCK_T_CK">
+      <End Role="T_CK" EntitySet="T_CK" />
+      <End Role="T_QFMX_JHGL" EntitySet="T_QFMX_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_QFMX_JHGL_C_RCK_T_CK" Association="WX.Data.DataModel.FK_T_QFMX_JHGL_C_RCK_T_CK">
+      <End Role="T_CK" EntitySet="T_CK" />
+      <End Role="T_QFMX_JHGL" EntitySet="T_QFMX_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DJ_JHGL_C_CZY_T_YG" Association="WX.Data.DataModel.FK_T_DJ_JHGL_C_CZY_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_DJ_JHGL" EntitySet="T_DJ_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DJ_JHGL_C_DJLX_T_DJLX" Association="WX.Data.DataModel.FK_T_DJ_JHGL_C_DJLX_T_DJLX">
+      <End Role="T_DJLX" EntitySet="T_DJLX" />
+      <End Role="T_DJ_JHGL" EntitySet="T_DJ_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DJ_JHGL_C_GHS_T_GHS" Association="WX.Data.DataModel.FK_T_DJ_JHGL_C_GHS_T_GHS">
+      <End Role="T_GHS" EntitySet="T_GHS" />
+      <End Role="T_DJ_JHGL" EntitySet="T_DJ_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DJ_JHGL_C_JBR_T_YG" Association="WX.Data.DataModel.FK_T_DJ_JHGL_C_JBR_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_DJ_JHGL" EntitySet="T_DJ_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DJ_JHGL_C_SHR_T_YG" Association="WX.Data.DataModel.FK_T_DJ_JHGL_C_SHR_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_DJ_JHGL" EntitySet="T_DJ_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DJSP_JHGL_C_DJID_T_DJ_JHGL" Association="WX.Data.DataModel.FK_T_DJSP_JHGL_C_DJID_T_DJ_JHGL">
+      <End Role="T_DJ_JHGL" EntitySet="T_DJ_JHGL" />
+      <End Role="T_DJSP_JHGL" EntitySet="T_DJSP_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_QFMX_JHGL_C_DJ_T_DJ_JHGL" Association="WX.Data.DataModel.FK_T_QFMX_JHGL_C_DJ_T_DJ_JHGL">
+      <End Role="T_DJ_JHGL" EntitySet="T_DJ_JHGL" />
+      <End Role="T_QFMX_JHGL" EntitySet="T_QFMX_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DJSP_JHGL_C_DJLX_T_DJLX" Association="WX.Data.DataModel.FK_T_DJSP_JHGL_C_DJLX_T_DJLX">
+      <End Role="T_DJLX" EntitySet="T_DJLX" />
+      <End Role="T_DJSP_JHGL" EntitySet="T_DJSP_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_QFMX_JHGL_C_DJLX_T_DJLX" Association="WX.Data.DataModel.FK_T_QFMX_JHGL_C_DJLX_T_DJLX">
+      <End Role="T_DJLX" EntitySet="T_DJLX" />
+      <End Role="T_QFMX_JHGL" EntitySet="T_QFMX_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DJSP_JHGL_C_CGGHS_T_GHS" Association="WX.Data.DataModel.FK_T_DJSP_JHGL_C_CGGHS_T_GHS">
+      <End Role="T_GHS" EntitySet="T_GHS" />
+      <End Role="T_DJSP_JHGL" EntitySet="T_DJSP_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DJSP_JHGL_C_CZY_T_YG" Association="WX.Data.DataModel.FK_T_DJSP_JHGL_C_CZY_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_DJSP_JHGL" EntitySet="T_DJSP_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DJSP_JHGL_C_JBR_T_YG" Association="WX.Data.DataModel.FK_T_DJSP_JHGL_C_JBR_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_DJSP_JHGL" EntitySet="T_DJSP_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DJSP_JHGL_C_SHR_T_YG" Association="WX.Data.DataModel.FK_T_DJSP_JHGL_C_SHR_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_DJSP_JHGL" EntitySet="T_DJSP_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DJSP_JHGL_C_SP_T_SP" Association="WX.Data.DataModel.FK_T_DJSP_JHGL_C_SP_T_SP">
+      <End Role="T_SP" EntitySet="T_SP" />
+      <End Role="T_DJSP_JHGL" EntitySet="T_DJSP_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_GHS_C_CZY_T_YG" Association="WX.Data.DataModel.FK_T_GHS_C_CZY_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_GHS" EntitySet="T_GHS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_GHS_C_JBR_T_YG" Association="WX.Data.DataModel.FK_T_GHS_C_JBR_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_GHS" EntitySet="T_GHS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_QFMX_JHGL_C_GHS_T_GHS" Association="WX.Data.DataModel.FK_T_QFMX_JHGL_C_GHS_T_GHS">
+      <End Role="T_GHS" EntitySet="T_GHS" />
+      <End Role="T_QFMX_JHGL" EntitySet="T_QFMX_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_KCSP_DQZT_C_KCSP_T_SP" Association="WX.Data.DataModel.FK_T_KCSP_DQZT_C_KCSP_T_SP">
+      <End Role="T_SP" EntitySet="T_SP" />
+      <End Role="T_KCSP_DQZT" EntitySet="T_KCSP_DQZT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_QFMX_JHGL_C_CZY_T_YG" Association="WX.Data.DataModel.FK_T_QFMX_JHGL_C_CZY_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_QFMX_JHGL" EntitySet="T_QFMX_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_QFMX_JHGL_C_JBR_T_YG" Association="WX.Data.DataModel.FK_T_QFMX_JHGL_C_JBR_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_QFMX_JHGL" EntitySet="T_QFMX_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_QFMX_JHGL_C_SHR_T_YG" Association="WX.Data.DataModel.FK_T_QFMX_JHGL_C_SHR_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_QFMX_JHGL" EntitySet="T_QFMX_JHGL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_RZ_C_CZY_T_YG" Association="WX.Data.DataModel.FK_T_RZ_C_CZY_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_RZ" EntitySet="T_RZ" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_SP_C_CZY_T_YG" Association="WX.Data.DataModel.FK_T_SP_C_CZY_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_SP" EntitySet="T_SP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_SP_C_DW_T_SPDW" Association="WX.Data.DataModel.FK_T_SP_C_DW_T_SPDW">
+      <End Role="T_SPDW" EntitySet="T_SPDW" />
+      <End Role="T_SP" EntitySet="T_SP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_SP_C_JBR_T_YG" Association="WX.Data.DataModel.FK_T_SP_C_JBR_T_YG">
+      <End Role="T_YG" EntitySet="T_YG" />
+      <End Role="T_SP" EntitySet="T_SP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_SP_C_YS_T_SPYS" Association="WX.Data.DataModel.FK_T_SP_C_YS_T_SPYS">
+      <End Role="T_SPYS" EntitySet="T_SPYS" />
+      <End Role="T_SP" EntitySet="T_SP" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="T_CK">
+    <Key>
+      <PropertyRef Name="C_ID" />
+    </Key>
+    <Property Name="C_FBID" Type="Guid" Nullable="false" />
+    <Property Name="C_GXRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_CJRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_ID" Type="Guid" Nullable="false" />
+    <Property Name="C_MC" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="C_XBH" Type="Decimal" Nullable="false" Precision="6" Scale="0" />
+    <Property Name="C_MCJM" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="C_FZR" Type="Guid" Nullable="false" />
+    <Property Name="C_DQ" Type="Guid" Nullable="false" />
+    <Property Name="C_DQLJ" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="C_LXDH" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="C_LXDZ" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="C_MRBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_JYBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_XTCSBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_XNBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_CZY" Type="Guid" Nullable="false" />
+    <Property Name="C_JBR" Type="Guid" Nullable="false" />
+    <Property Name="C_BZ" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="T_YG" Relationship="WX.Data.DataModel.FK_T_CK_C_CZY_T_YG" FromRole="T_CK" ToRole="T_YG" />
+    <NavigationProperty Name="T_YG1" Relationship="WX.Data.DataModel.FK_T_CK_C_FZR_T_YG" FromRole="T_CK" ToRole="T_YG" />
+    <NavigationProperty Name="T_YG2" Relationship="WX.Data.DataModel.FK_T_CK_C_JBR_T_YG" FromRole="T_CK" ToRole="T_YG" />
+    <NavigationProperty Name="T_DJ_JHGL" Relationship="WX.Data.DataModel.FK_T_DJ_JHGL_C_CCK_T_CK" FromRole="T_CK" ToRole="T_DJ_JHGL" />
+    <NavigationProperty Name="T_DJ_JHGL1" Relationship="WX.Data.DataModel.FK_T_DJ_JHGL_C_RCK_T_CK" FromRole="T_CK" ToRole="T_DJ_JHGL" />
+    <NavigationProperty Name="T_DJSP_JHGL" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_CCK_T_CK" FromRole="T_CK" ToRole="T_DJSP_JHGL" />
+    <NavigationProperty Name="T_DJSP_JHGL1" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_RCK_T_CK" FromRole="T_CK" ToRole="T_DJSP_JHGL" />
+    <NavigationProperty Name="T_QFMX_JHGL" Relationship="WX.Data.DataModel.FK_T_QFMX_JHGL_C_CCK_T_CK" FromRole="T_CK" ToRole="T_QFMX_JHGL" />
+    <NavigationProperty Name="T_QFMX_JHGL1" Relationship="WX.Data.DataModel.FK_T_QFMX_JHGL_C_RCK_T_CK" FromRole="T_CK" ToRole="T_QFMX_JHGL" />
+  </EntityType>
+  <EntityType Name="T_DJ_JHGL">
+    <Key>
+      <PropertyRef Name="C_ID" />
+    </Key>
+    <Property Name="C_ZWYJSBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_ZWNJSBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_KDJQBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_JQBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_CKBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_RKBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_YSBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_HLPCBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_JQRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_ZWY" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+    <Property Name="C_ZWN" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+    <Property Name="C_FBID" Type="Guid" Nullable="false" />
+    <Property Name="C_GXRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_CJRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_SJYRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_ID" Type="Guid" Nullable="false" />
+    <Property Name="C_DJH" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="C_DJLX" Type="Byte" Nullable="false" />
+    <Property Name="C_WFDW" Type="Guid" Nullable="false" />
+    <Property Name="C_GHS" Type="Guid" Nullable="false" />
+    <Property Name="C_GHSJBR" Type="Guid" Nullable="false" />
+    <Property Name="C_CCK" Type="Guid" Nullable="false" />
+    <Property Name="C_RCK" Type="Guid" Nullable="false" />
+    <Property Name="C_YZQJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_DJYZQJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_DJSZQJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_DJYHJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_VDJYZQJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_VDJSZQJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_VDJYHJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_SZQJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_JBR" Type="Guid" Nullable="false" />
+    <Property Name="C_CZY" Type="Guid" Nullable="false" />
+    <Property Name="C_DYBZ" Type="Byte" Nullable="false" />
+    <Property Name="C_THBZ" Type="Byte" Nullable="false" />
+    <Property Name="C_DJZT" Type="Byte" Nullable="false" />
+    <Property Name="C_CKSL" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="C_RKSL" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="C_CKJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_RKJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_CKCBJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_RKCBJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_DJLRJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_DJJYLRL" Type="Decimal" Nullable="false" Precision="8" Scale="4" />
+    <Property Name="C_DJCBLRL" Type="Decimal" Nullable="false" Precision="8" Scale="4" />
+    <Property Name="C_SPYHJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_DJTMSL" Type="Int32" Nullable="false" />
+    <Property Name="C_WFYHZH" Type="Guid" Nullable="false" />
+    <Property Name="C_GHSYHZH" Type="Guid" Nullable="false" />
+    <Property Name="C_WFZHLB" Type="Byte" Nullable="false" />
+    <Property Name="C_GHSZHLB" Type="Byte" Nullable="false" />
+    <Property Name="C_ZFFS" Type="Byte" Nullable="false" />
+    <Property Name="C_GLDJ" Type="Guid" />
+    <Property Name="C_SHR" Type="Guid" />
+    <Property Name="C_GLDJH" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="C_BZ" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="T_CK" Relationship="WX.Data.DataModel.FK_T_DJ_JHGL_C_CCK_T_CK" FromRole="T_DJ_JHGL" ToRole="T_CK" />
+    <NavigationProperty Name="T_CK1" Relationship="WX.Data.DataModel.FK_T_DJ_JHGL_C_RCK_T_CK" FromRole="T_DJ_JHGL" ToRole="T_CK" />
+    <NavigationProperty Name="T_YG" Relationship="WX.Data.DataModel.FK_T_DJ_JHGL_C_CZY_T_YG" FromRole="T_DJ_JHGL" ToRole="T_YG" />
+    <NavigationProperty Name="T_DJLX" Relationship="WX.Data.DataModel.FK_T_DJ_JHGL_C_DJLX_T_DJLX" FromRole="T_DJ_JHGL" ToRole="T_DJLX" />
+    <NavigationProperty Name="T_GHS" Relationship="WX.Data.DataModel.FK_T_DJ_JHGL_C_GHS_T_GHS" FromRole="T_DJ_JHGL" ToRole="T_GHS" />
+    <NavigationProperty Name="T_YG1" Relationship="WX.Data.DataModel.FK_T_DJ_JHGL_C_JBR_T_YG" FromRole="T_DJ_JHGL" ToRole="T_YG" />
+    <NavigationProperty Name="T_YG2" Relationship="WX.Data.DataModel.FK_T_DJ_JHGL_C_SHR_T_YG" FromRole="T_DJ_JHGL" ToRole="T_YG" />
+    <NavigationProperty Name="T_DJSP_JHGL" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_DJID_T_DJ_JHGL" FromRole="T_DJ_JHGL" ToRole="T_DJSP_JHGL" />
+    <NavigationProperty Name="T_QFMX_JHGL" Relationship="WX.Data.DataModel.FK_T_QFMX_JHGL_C_DJ_T_DJ_JHGL" FromRole="T_DJ_JHGL" ToRole="T_QFMX_JHGL" />
+  </EntityType>
+  <EntityType Name="T_DJLX">
+    <Key>
+      <PropertyRef Name="C_DM" />
+    </Key>
+    <Property Name="C_DM" Type="Byte" Nullable="false" />
+    <Property Name="C_LX" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="C_QZ" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="C_LB" Type="Byte" Nullable="false" />
+    <Property Name="C_JYBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_BZ" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="T_DJ_JHGL" Relationship="WX.Data.DataModel.FK_T_DJ_JHGL_C_DJLX_T_DJLX" FromRole="T_DJLX" ToRole="T_DJ_JHGL" />
+    <NavigationProperty Name="T_DJSP_JHGL" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_DJLX_T_DJLX" FromRole="T_DJLX" ToRole="T_DJSP_JHGL" />
+    <NavigationProperty Name="T_QFMX_JHGL" Relationship="WX.Data.DataModel.FK_T_QFMX_JHGL_C_DJLX_T_DJLX" FromRole="T_DJLX" ToRole="T_QFMX_JHGL" />
+  </EntityType>
+  <EntityType Name="T_DJSP_JHGL">
+    <Key>
+      <PropertyRef Name="C_ID" />
+      <PropertyRef Name="C_DJID" />
+    </Key>
+    <Property Name="C_ZWYJSBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_ZWNJSBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_CKBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_RKBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_HLPCBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_ZWY" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+    <Property Name="C_ZWN" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+    <Property Name="C_FBID" Type="Guid" Nullable="false" />
+    <Property Name="C_CJRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_ID" Type="Guid" Nullable="false" />
+    <Property Name="C_DJID" Type="Guid" Nullable="false" />
+    <Property Name="C_SP" Type="Guid" Nullable="false" />
+    <Property Name="C_PC" Type="Decimal" Nullable="false" Precision="15" Scale="0" />
+    <Property Name="C_XH" Type="Int32" Nullable="false" />
+    <Property Name="C_SCRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_YXRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_SPPH" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+    <Property Name="C_JJ" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_DJ" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_ZKL" Type="Decimal" Nullable="false" Precision="5" Scale="4" />
+    <Property Name="C_ZHJ" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_SL" Type="Decimal" Nullable="false" Precision="6" Scale="0" />
+    <Property Name="C_ZJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_ZHJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_VSL" Type="Decimal" Nullable="false" Precision="6" Scale="0" />
+    <Property Name="C_VZJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_VZHJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_CBJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_VCBJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_CGGHS" Type="Guid" Nullable="false" />
+    <Property Name="C_SPLRJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_SPJYLRL" Type="Decimal" Nullable="false" Precision="8" Scale="4" />
+    <Property Name="C_SPCBLRL" Type="Decimal" Nullable="false" Precision="8" Scale="4" />
+    <Property Name="C_SPYHJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_DJH" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="C_DJLX" Type="Byte" Nullable="false" />
+    <Property Name="C_CCK" Type="Guid" Nullable="false" />
+    <Property Name="C_RCK" Type="Guid" Nullable="false" />
+    <Property Name="C_JBR" Type="Guid" Nullable="false" />
+    <Property Name="C_CZY" Type="Guid" Nullable="false" />
+    <Property Name="C_CGDJID" Type="Guid" />
+    <Property Name="C_SHR" Type="Guid" />
+    <Property Name="C_BZ" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="T_CK" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_CCK_T_CK" FromRole="T_DJSP_JHGL" ToRole="T_CK" />
+    <NavigationProperty Name="T_CK1" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_RCK_T_CK" FromRole="T_DJSP_JHGL" ToRole="T_CK" />
+    <NavigationProperty Name="T_DJ_JHGL" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_DJID_T_DJ_JHGL" FromRole="T_DJSP_JHGL" ToRole="T_DJ_JHGL" />
+    <NavigationProperty Name="T_DJLX" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_DJLX_T_DJLX" FromRole="T_DJSP_JHGL" ToRole="T_DJLX" />
+    <NavigationProperty Name="T_GHS" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_CGGHS_T_GHS" FromRole="T_DJSP_JHGL" ToRole="T_GHS" />
+    <NavigationProperty Name="T_YG" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_CZY_T_YG" FromRole="T_DJSP_JHGL" ToRole="T_YG" />
+    <NavigationProperty Name="T_YG1" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_JBR_T_YG" FromRole="T_DJSP_JHGL" ToRole="T_YG" />
+    <NavigationProperty Name="T_YG2" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_SHR_T_YG" FromRole="T_DJSP_JHGL" ToRole="T_YG" />
+    <NavigationProperty Name="T_SP" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_SP_T_SP" FromRole="T_DJSP_JHGL" ToRole="T_SP" />
+  </EntityType>
+  <EntityType Name="T_GHS">
+    <Key>
+      <PropertyRef Name="C_ID" />
+    </Key>
+    <Property Name="C_FBID" Type="Guid" Nullable="false" />
+    <Property Name="C_GXRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_CJRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_ID" Type="Guid" Nullable="false" />
+    <Property Name="C_MC" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="C_MCJM" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="C_XBH" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+    <Property Name="C_LB" Type="Byte" Nullable="false" />
+    <Property Name="C_LX" Type="Byte" Nullable="false" />
+    <Property Name="C_DJ" Type="Byte" Nullable="false" />
+    <Property Name="C_LXDH" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="C_LXDZ" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="C_XYJF" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="C_GHJF" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="C_DQ" Type="Guid" Nullable="false" />
+    <Property Name="C_MRBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_JYBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_XTCSBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_XNBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_CZY" Type="Guid" Nullable="false" />
+    <Property Name="C_JBR" Type="Guid" Nullable="false" />
+    <Property Name="C_LXR" Type="Guid" />
+    <Property Name="C_DY" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="C_BZ" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="T_DJ_JHGL" Relationship="WX.Data.DataModel.FK_T_DJ_JHGL_C_GHS_T_GHS" FromRole="T_GHS" ToRole="T_DJ_JHGL" />
+    <NavigationProperty Name="T_DJSP_JHGL" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_CGGHS_T_GHS" FromRole="T_GHS" ToRole="T_DJSP_JHGL" />
+    <NavigationProperty Name="T_YG" Relationship="WX.Data.DataModel.FK_T_GHS_C_CZY_T_YG" FromRole="T_GHS" ToRole="T_YG" />
+    <NavigationProperty Name="T_YG1" Relationship="WX.Data.DataModel.FK_T_GHS_C_JBR_T_YG" FromRole="T_GHS" ToRole="T_YG" />
+    <NavigationProperty Name="T_QFMX_JHGL" Relationship="WX.Data.DataModel.FK_T_QFMX_JHGL_C_GHS_T_GHS" FromRole="T_GHS" ToRole="T_QFMX_JHGL" />
+  </EntityType>
+  <EntityType Name="T_KCSP_DQZT">
+    <Key>
+      <PropertyRef Name="C_KCSP" />
+    </Key>
+    <Property Name="C_FBID" Type="Guid" Nullable="false" />
+    <Property Name="C_GXRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_CJRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_KCSP" Type="Guid" Nullable="false" />
+    <Property Name="C_KCSL" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="C_KCSX" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="C_KCXX" Type="Decimal" Nullable="false" Precision="6" Scale="0" />
+    <Property Name="C_CBJJ" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_SCJJ" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_CBJE" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+    <Property Name="C_RKSL" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="C_CKSL" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <NavigationProperty Name="T_SP" Relationship="WX.Data.DataModel.FK_T_KCSP_DQZT_C_KCSP_T_SP" FromRole="T_KCSP_DQZT" ToRole="T_SP" />
+  </EntityType>
+  <EntityType Name="T_QFMX_JHGL">
+    <Key>
+      <PropertyRef Name="C_DJ" />
+    </Key>
+    <Property Name="C_CKBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_RKBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_QSBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_ZWNJSBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_ZWYJSBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_ZWN" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+    <Property Name="C_ZWY" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+    <Property Name="C_FBID" Type="Guid" Nullable="false" />
+    <Property Name="C_GXRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_CJRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_QFJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_SZQJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_DJ" Type="Guid" Nullable="false" />
+    <Property Name="C_DJH" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="C_DJLX" Type="Byte" Nullable="false" />
+    <Property Name="C_GHS" Type="Guid" Nullable="false" />
+    <Property Name="C_GHSJBR" Type="Guid" Nullable="false" />
+    <Property Name="C_YZQJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_DJYZQJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_DJSZQJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_DJYHJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_VDJYZQJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_VDJSZQJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_VDJYHJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_CCK" Type="Guid" Nullable="false" />
+    <Property Name="C_RCK" Type="Guid" Nullable="false" />
+    <Property Name="C_CKSL" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="C_RKSL" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="C_CKJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_RKJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_CKCBJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_RKCBJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_JBR" Type="Guid" Nullable="false" />
+    <Property Name="C_CZY" Type="Guid" Nullable="false" />
+    <Property Name="C_DJLRJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_DJJYLRL" Type="Decimal" Nullable="false" Precision="8" Scale="4" />
+    <Property Name="C_DJCBLRL" Type="Decimal" Nullable="false" Precision="8" Scale="4" />
+    <Property Name="C_SPYHJE" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_DJTMSL" Type="Int32" Nullable="false" />
+    <Property Name="C_GLDJ" Type="Guid" />
+    <Property Name="C_SHR" Type="Guid" />
+    <Property Name="C_BZ" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="T_CK" Relationship="WX.Data.DataModel.FK_T_QFMX_JHGL_C_CCK_T_CK" FromRole="T_QFMX_JHGL" ToRole="T_CK" />
+    <NavigationProperty Name="T_CK1" Relationship="WX.Data.DataModel.FK_T_QFMX_JHGL_C_RCK_T_CK" FromRole="T_QFMX_JHGL" ToRole="T_CK" />
+    <NavigationProperty Name="T_DJ_JHGL" Relationship="WX.Data.DataModel.FK_T_QFMX_JHGL_C_DJ_T_DJ_JHGL" FromRole="T_QFMX_JHGL" ToRole="T_DJ_JHGL" />
+    <NavigationProperty Name="T_DJLX" Relationship="WX.Data.DataModel.FK_T_QFMX_JHGL_C_DJLX_T_DJLX" FromRole="T_QFMX_JHGL" ToRole="T_DJLX" />
+    <NavigationProperty Name="T_GHS" Relationship="WX.Data.DataModel.FK_T_QFMX_JHGL_C_GHS_T_GHS" FromRole="T_QFMX_JHGL" ToRole="T_GHS" />
+    <NavigationProperty Name="T_YG" Relationship="WX.Data.DataModel.FK_T_QFMX_JHGL_C_CZY_T_YG" FromRole="T_QFMX_JHGL" ToRole="T_YG" />
+    <NavigationProperty Name="T_YG1" Relationship="WX.Data.DataModel.FK_T_QFMX_JHGL_C_JBR_T_YG" FromRole="T_QFMX_JHGL" ToRole="T_YG" />
+    <NavigationProperty Name="T_YG2" Relationship="WX.Data.DataModel.FK_T_QFMX_JHGL_C_SHR_T_YG" FromRole="T_QFMX_JHGL" ToRole="T_YG" />
+  </EntityType>
+  <EntityType Name="T_RZ">
+    <Key>
+      <PropertyRef Name="C_ID" />
+    </Key>
+    <Property Name="C_FBID" Type="Guid" Nullable="false" />
+    <Property Name="C_CJRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_ID" Type="Guid" Nullable="false" />
+    <Property Name="C_JLID" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="C_YWLX" Type="Byte" Nullable="false" />
+    <Property Name="C_YWLXMC" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="C_CZLX" Type="Byte" Nullable="false" />
+    <Property Name="C_CZLXMC" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="C_CZY" Type="Guid" Nullable="false" />
+    <Property Name="C_CZYXM" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="C_BM" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="C_BBM" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="C_ZBM" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="C_ZBBM" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="C_ZBSL" Type="Int32" />
+    <Property Name="C_HOST" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="C_IP" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="C_NR" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="T_YG" Relationship="WX.Data.DataModel.FK_T_RZ_C_CZY_T_YG" FromRole="T_RZ" ToRole="T_YG" />
+  </EntityType>
+  <EntityType Name="T_SP">
+    <Key>
+      <PropertyRef Name="C_ID" />
+    </Key>
+    <Property Name="C_JYBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_XNBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_XTCSBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_FBID" Type="Guid" Nullable="false" />
+    <Property Name="C_ID" Type="Guid" Nullable="false" />
+    <Property Name="C_GXRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_CJRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_XBH" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="C_MC" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="C_MCJM" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="C_DW" Type="Byte" Nullable="false" />
+    <Property Name="C_GGXH" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="C_YS" Type="Guid" Nullable="false" />
+    <Property Name="C_SPLB" Type="Guid" Nullable="false" />
+    <Property Name="C_SCCS" Type="String" Nullable="false" MaxLength="192" Unicode="true" FixedLength="false" />
+    <Property Name="C_KCSX" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="C_KCXX" Type="Decimal" Nullable="false" Precision="6" Scale="0" />
+    <Property Name="C_YSJJ" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_YSSJ" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="C_BZQX" Type="Decimal" Nullable="false" Precision="6" Scale="1" />
+    <Property Name="C_BHQX" Type="Decimal" Nullable="false" Precision="5" Scale="1" />
+    <Property Name="C_CZY" Type="Guid" Nullable="false" />
+    <Property Name="C_JBR" Type="Guid" Nullable="false" />
+    <Property Name="C_TM" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="C_BZ" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="T_DJSP_JHGL" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_SP_T_SP" FromRole="T_SP" ToRole="T_DJSP_JHGL" />
+    <NavigationProperty Name="T_KCSP_DQZT" Relationship="WX.Data.DataModel.FK_T_KCSP_DQZT_C_KCSP_T_SP" FromRole="T_SP" ToRole="T_KCSP_DQZT" />
+    <NavigationProperty Name="T_YG" Relationship="WX.Data.DataModel.FK_T_SP_C_CZY_T_YG" FromRole="T_SP" ToRole="T_YG" />
+    <NavigationProperty Name="T_SPDW" Relationship="WX.Data.DataModel.FK_T_SP_C_DW_T_SPDW" FromRole="T_SP" ToRole="T_SPDW" />
+    <NavigationProperty Name="T_YG1" Relationship="WX.Data.DataModel.FK_T_SP_C_JBR_T_YG" FromRole="T_SP" ToRole="T_YG" />
+    <NavigationProperty Name="T_SPYS" Relationship="WX.Data.DataModel.FK_T_SP_C_YS_T_SPYS" FromRole="T_SP" ToRole="T_SPYS" />
+  </EntityType>
+  <EntityType Name="T_SPDW">
+    <Key>
+      <PropertyRef Name="C_DM" />
+    </Key>
+    <Property Name="C_DM" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="C_DW" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="C_JYBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_XTCSBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_BZ" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="T_SP" Relationship="WX.Data.DataModel.FK_T_SP_C_DW_T_SPDW" FromRole="T_SPDW" ToRole="T_SP" />
+  </EntityType>
+  <EntityType Name="T_SPYS">
+    <Key>
+      <PropertyRef Name="C_ID" />
+    </Key>
+    <Property Name="C_ID" Type="Guid" Nullable="false" />
+    <Property Name="C_XH" Type="Byte" Nullable="false" />
+    <Property Name="C_YS" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="C_JYBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_XTCSBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_BZ" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="T_SP" Relationship="WX.Data.DataModel.FK_T_SP_C_YS_T_SPYS" FromRole="T_SPYS" ToRole="T_SP" />
+  </EntityType>
+  <EntityType Name="T_YG">
+    <Key>
+      <PropertyRef Name="C_ID" />
+    </Key>
+    <Property Name="C_FBID" Type="Guid" Nullable="false" />
+    <Property Name="C_GXRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_CJRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_ID" Type="Guid" Nullable="false" />
+    <Property Name="C_XM" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="C_XMJM" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="C_XBH" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+    <Property Name="C_XB" Type="Byte" Nullable="false" />
+    <Property Name="C_NL" Type="Byte" Nullable="false" />
+    <Property Name="C_XX" Type="Byte" Nullable="false" />
+    <Property Name="C_XL" Type="Byte" Nullable="false" />
+    <Property Name="C_HF" Type="Byte" Nullable="false" />
+    <Property Name="C_ZN" Type="Byte" Nullable="false" />
+    <Property Name="C_DWBM" Type="Guid" Nullable="false" />
+    <Property Name="C_LXDH" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="C_LXDZ" Type="String" Nullable="false" MaxLength="225" Unicode="true" FixedLength="false" />
+    <Property Name="C_JYBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_XTCSBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_XNBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_JBR" Type="Guid" Nullable="false" />
+    <Property Name="C_CZY" Type="Guid" Nullable="false" />
+    <Property Name="C_ZW" Type="Guid" Nullable="false" />
+    <Property Name="C_GZJS" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="C_TCBL" Type="Decimal" Nullable="false" Precision="6" Scale="6" />
+    <Property Name="C_GF" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+    <Property Name="C_RZRQ" Type="DateTime" Nullable="false" />
+    <Property Name="C_HTNX" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="C_YLZBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_GZNX" Type="Decimal" Nullable="false" Precision="3" Scale="1" />
+    <Property Name="C_CZYBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_SHYBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_YWYBZ" Type="Boolean" Nullable="false" />
+    <Property Name="C_FZYW" Type="Byte" Nullable="false" />
+    <Property Name="C_DWBMLJ" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="C_BTFYX" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="C_LZRQ" Type="DateTime" />
+    <Property Name="C_ZP" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="C_DY" Type="String" MaxLength="225" Unicode="true" FixedLength="false" />
+    <Property Name="C_BZ" Type="String" MaxLength="225" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="T_CK" Relationship="WX.Data.DataModel.FK_T_CK_C_CZY_T_YG" FromRole="T_YG" ToRole="T_CK" />
+    <NavigationProperty Name="T_CK1" Relationship="WX.Data.DataModel.FK_T_CK_C_FZR_T_YG" FromRole="T_YG" ToRole="T_CK" />
+    <NavigationProperty Name="T_CK2" Relationship="WX.Data.DataModel.FK_T_CK_C_JBR_T_YG" FromRole="T_YG" ToRole="T_CK" />
+    <NavigationProperty Name="T_DJ_JHGL" Relationship="WX.Data.DataModel.FK_T_DJ_JHGL_C_CZY_T_YG" FromRole="T_YG" ToRole="T_DJ_JHGL" />
+    <NavigationProperty Name="T_DJ_JHGL1" Relationship="WX.Data.DataModel.FK_T_DJ_JHGL_C_JBR_T_YG" FromRole="T_YG" ToRole="T_DJ_JHGL" />
+    <NavigationProperty Name="T_DJ_JHGL2" Relationship="WX.Data.DataModel.FK_T_DJ_JHGL_C_SHR_T_YG" FromRole="T_YG" ToRole="T_DJ_JHGL" />
+    <NavigationProperty Name="T_DJSP_JHGL" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_CZY_T_YG" FromRole="T_YG" ToRole="T_DJSP_JHGL" />
+    <NavigationProperty Name="T_DJSP_JHGL1" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_JBR_T_YG" FromRole="T_YG" ToRole="T_DJSP_JHGL" />
+    <NavigationProperty Name="T_DJSP_JHGL2" Relationship="WX.Data.DataModel.FK_T_DJSP_JHGL_C_SHR_T_YG" FromRole="T_YG" ToRole="T_DJSP_JHGL" />
+    <NavigationProperty Name="T_GHS" Relationship="WX.Data.DataModel.FK_T_GHS_C_CZY_T_YG" FromRole="T_YG" ToRole="T_GHS" />
+    <NavigationProperty Name="T_GHS1" Relationship="WX.Data.DataModel.FK_T_GHS_C_JBR_T_YG" FromRole="T_YG" ToRole="T_GHS" />
+    <NavigationProperty Name="T_QFMX_JHGL" Relationship="WX.Data.DataModel.FK_T_QFMX_JHGL_C_CZY_T_YG" FromRole="T_YG" ToRole="T_QFMX_JHGL" />
+    <NavigationProperty Name="T_QFMX_JHGL1" Relationship="WX.Data.DataModel.FK_T_QFMX_JHGL_C_JBR_T_YG" FromRole="T_YG" ToRole="T_QFMX_JHGL" />
+    <NavigationProperty Name="T_QFMX_JHGL2" Relationship="WX.Data.DataModel.FK_T_QFMX_JHGL_C_SHR_T_YG" FromRole="T_YG" ToRole="T_QFMX_JHGL" />
+    <NavigationProperty Name="T_RZ" Relationship="WX.Data.DataModel.FK_T_RZ_C_CZY_T_YG" FromRole="T_YG" ToRole="T_RZ" />
+    <NavigationProperty Name="T_SP" Relationship="WX.Data.DataModel.FK_T_SP_C_CZY_T_YG" FromRole="T_YG" ToRole="T_SP" />
+    <NavigationProperty Name="T_SP1" Relationship="WX.Data.DataModel.FK_T_SP_C_JBR_T_YG" FromRole="T_YG" ToRole="T_SP" />
+  </EntityType>
+  <Association Name="FK_T_CK_C_CZY_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="1" />
+    <End Role="T_CK" Type="WX.Data.DataModel.T_CK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_CK">
+        <PropertyRef Name="C_CZY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_CK_C_FZR_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="1" />
+    <End Role="T_CK" Type="WX.Data.DataModel.T_CK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_CK">
+        <PropertyRef Name="C_FZR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_CK_C_JBR_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="1" />
+    <End Role="T_CK" Type="WX.Data.DataModel.T_CK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_CK">
+        <PropertyRef Name="C_JBR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DJ_JHGL_C_CCK_T_CK">
+    <End Role="T_CK" Type="WX.Data.DataModel.T_CK" Multiplicity="1" />
+    <End Role="T_DJ_JHGL" Type="WX.Data.DataModel.T_DJ_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_CK">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_DJ_JHGL">
+        <PropertyRef Name="C_CCK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DJ_JHGL_C_RCK_T_CK">
+    <End Role="T_CK" Type="WX.Data.DataModel.T_CK" Multiplicity="1" />
+    <End Role="T_DJ_JHGL" Type="WX.Data.DataModel.T_DJ_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_CK">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_DJ_JHGL">
+        <PropertyRef Name="C_RCK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DJSP_JHGL_C_CCK_T_CK">
+    <End Role="T_CK" Type="WX.Data.DataModel.T_CK" Multiplicity="1" />
+    <End Role="T_DJSP_JHGL" Type="WX.Data.DataModel.T_DJSP_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_CK">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_DJSP_JHGL">
+        <PropertyRef Name="C_CCK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DJSP_JHGL_C_RCK_T_CK">
+    <End Role="T_CK" Type="WX.Data.DataModel.T_CK" Multiplicity="1" />
+    <End Role="T_DJSP_JHGL" Type="WX.Data.DataModel.T_DJSP_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_CK">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_DJSP_JHGL">
+        <PropertyRef Name="C_RCK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_QFMX_JHGL_C_CCK_T_CK">
+    <End Role="T_CK" Type="WX.Data.DataModel.T_CK" Multiplicity="1" />
+    <End Role="T_QFMX_JHGL" Type="WX.Data.DataModel.T_QFMX_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_CK">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_QFMX_JHGL">
+        <PropertyRef Name="C_CCK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_QFMX_JHGL_C_RCK_T_CK">
+    <End Role="T_CK" Type="WX.Data.DataModel.T_CK" Multiplicity="1" />
+    <End Role="T_QFMX_JHGL" Type="WX.Data.DataModel.T_QFMX_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_CK">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_QFMX_JHGL">
+        <PropertyRef Name="C_RCK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DJ_JHGL_C_CZY_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="1" />
+    <End Role="T_DJ_JHGL" Type="WX.Data.DataModel.T_DJ_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_DJ_JHGL">
+        <PropertyRef Name="C_CZY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DJ_JHGL_C_DJLX_T_DJLX">
+    <End Role="T_DJLX" Type="WX.Data.DataModel.T_DJLX" Multiplicity="1" />
+    <End Role="T_DJ_JHGL" Type="WX.Data.DataModel.T_DJ_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_DJLX">
+        <PropertyRef Name="C_DM" />
+      </Principal>
+      <Dependent Role="T_DJ_JHGL">
+        <PropertyRef Name="C_DJLX" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DJ_JHGL_C_GHS_T_GHS">
+    <End Role="T_GHS" Type="WX.Data.DataModel.T_GHS" Multiplicity="1" />
+    <End Role="T_DJ_JHGL" Type="WX.Data.DataModel.T_DJ_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_GHS">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_DJ_JHGL">
+        <PropertyRef Name="C_GHS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DJ_JHGL_C_JBR_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="1" />
+    <End Role="T_DJ_JHGL" Type="WX.Data.DataModel.T_DJ_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_DJ_JHGL">
+        <PropertyRef Name="C_JBR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DJ_JHGL_C_SHR_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="0..1" />
+    <End Role="T_DJ_JHGL" Type="WX.Data.DataModel.T_DJ_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_DJ_JHGL">
+        <PropertyRef Name="C_SHR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DJSP_JHGL_C_DJID_T_DJ_JHGL">
+    <End Role="T_DJ_JHGL" Type="WX.Data.DataModel.T_DJ_JHGL" Multiplicity="1" />
+    <End Role="T_DJSP_JHGL" Type="WX.Data.DataModel.T_DJSP_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_DJ_JHGL">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_DJSP_JHGL">
+        <PropertyRef Name="C_DJID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_QFMX_JHGL_C_DJ_T_DJ_JHGL">
+    <End Role="T_DJ_JHGL" Type="WX.Data.DataModel.T_DJ_JHGL" Multiplicity="1" />
+    <End Role="T_QFMX_JHGL" Type="WX.Data.DataModel.T_QFMX_JHGL" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="T_DJ_JHGL">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_QFMX_JHGL">
+        <PropertyRef Name="C_DJ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DJSP_JHGL_C_DJLX_T_DJLX">
+    <End Role="T_DJLX" Type="WX.Data.DataModel.T_DJLX" Multiplicity="1" />
+    <End Role="T_DJSP_JHGL" Type="WX.Data.DataModel.T_DJSP_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_DJLX">
+        <PropertyRef Name="C_DM" />
+      </Principal>
+      <Dependent Role="T_DJSP_JHGL">
+        <PropertyRef Name="C_DJLX" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_QFMX_JHGL_C_DJLX_T_DJLX">
+    <End Role="T_DJLX" Type="WX.Data.DataModel.T_DJLX" Multiplicity="1" />
+    <End Role="T_QFMX_JHGL" Type="WX.Data.DataModel.T_QFMX_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_DJLX">
+        <PropertyRef Name="C_DM" />
+      </Principal>
+      <Dependent Role="T_QFMX_JHGL">
+        <PropertyRef Name="C_DJLX" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DJSP_JHGL_C_CGGHS_T_GHS">
+    <End Role="T_GHS" Type="WX.Data.DataModel.T_GHS" Multiplicity="1" />
+    <End Role="T_DJSP_JHGL" Type="WX.Data.DataModel.T_DJSP_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_GHS">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_DJSP_JHGL">
+        <PropertyRef Name="C_CGGHS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DJSP_JHGL_C_CZY_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="1" />
+    <End Role="T_DJSP_JHGL" Type="WX.Data.DataModel.T_DJSP_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_DJSP_JHGL">
+        <PropertyRef Name="C_CZY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DJSP_JHGL_C_JBR_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="1" />
+    <End Role="T_DJSP_JHGL" Type="WX.Data.DataModel.T_DJSP_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_DJSP_JHGL">
+        <PropertyRef Name="C_JBR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DJSP_JHGL_C_SHR_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="0..1" />
+    <End Role="T_DJSP_JHGL" Type="WX.Data.DataModel.T_DJSP_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_DJSP_JHGL">
+        <PropertyRef Name="C_SHR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DJSP_JHGL_C_SP_T_SP">
+    <End Role="T_SP" Type="WX.Data.DataModel.T_SP" Multiplicity="1" />
+    <End Role="T_DJSP_JHGL" Type="WX.Data.DataModel.T_DJSP_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_SP">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_DJSP_JHGL">
+        <PropertyRef Name="C_SP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_GHS_C_CZY_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="1" />
+    <End Role="T_GHS" Type="WX.Data.DataModel.T_GHS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_GHS">
+        <PropertyRef Name="C_CZY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_GHS_C_JBR_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="1" />
+    <End Role="T_GHS" Type="WX.Data.DataModel.T_GHS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_GHS">
+        <PropertyRef Name="C_JBR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_QFMX_JHGL_C_GHS_T_GHS">
+    <End Role="T_GHS" Type="WX.Data.DataModel.T_GHS" Multiplicity="1" />
+    <End Role="T_QFMX_JHGL" Type="WX.Data.DataModel.T_QFMX_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_GHS">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_QFMX_JHGL">
+        <PropertyRef Name="C_GHS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_KCSP_DQZT_C_KCSP_T_SP">
+    <End Role="T_SP" Type="WX.Data.DataModel.T_SP" Multiplicity="1" />
+    <End Role="T_KCSP_DQZT" Type="WX.Data.DataModel.T_KCSP_DQZT" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="T_SP">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_KCSP_DQZT">
+        <PropertyRef Name="C_KCSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_QFMX_JHGL_C_CZY_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="1" />
+    <End Role="T_QFMX_JHGL" Type="WX.Data.DataModel.T_QFMX_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_QFMX_JHGL">
+        <PropertyRef Name="C_CZY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_QFMX_JHGL_C_JBR_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="1" />
+    <End Role="T_QFMX_JHGL" Type="WX.Data.DataModel.T_QFMX_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_QFMX_JHGL">
+        <PropertyRef Name="C_JBR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_QFMX_JHGL_C_SHR_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="0..1" />
+    <End Role="T_QFMX_JHGL" Type="WX.Data.DataModel.T_QFMX_JHGL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_QFMX_JHGL">
+        <PropertyRef Name="C_SHR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_RZ_C_CZY_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="1" />
+    <End Role="T_RZ" Type="WX.Data.DataModel.T_RZ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_RZ">
+        <PropertyRef Name="C_CZY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_SP_C_CZY_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="1" />
+    <End Role="T_SP" Type="WX.Data.DataModel.T_SP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_SP">
+        <PropertyRef Name="C_CZY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_SP_C_DW_T_SPDW">
+    <End Role="T_SPDW" Type="WX.Data.DataModel.T_SPDW" Multiplicity="1" />
+    <End Role="T_SP" Type="WX.Data.DataModel.T_SP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_SPDW">
+        <PropertyRef Name="C_DM" />
+      </Principal>
+      <Dependent Role="T_SP">
+        <PropertyRef Name="C_DW" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_SP_C_JBR_T_YG">
+    <End Role="T_YG" Type="WX.Data.DataModel.T_YG" Multiplicity="1" />
+    <End Role="T_SP" Type="WX.Data.DataModel.T_SP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_YG">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_SP">
+        <PropertyRef Name="C_JBR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_SP_C_YS_T_SPYS">
+    <End Role="T_SPYS" Type="WX.Data.DataModel.T_SPYS" Multiplicity="1" />
+    <End Role="T_SP" Type="WX.Data.DataModel.T_SP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_SPYS">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="T_SP">
+        <PropertyRef Name="C_YS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

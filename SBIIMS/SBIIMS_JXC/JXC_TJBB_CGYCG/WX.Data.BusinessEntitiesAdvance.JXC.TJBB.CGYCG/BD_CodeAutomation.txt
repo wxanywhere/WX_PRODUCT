@@ -1,0 +1,13 @@
+﻿//--------------------------------------------------------------------------------
+//BD
+(
+@"D:\Workspace\SBIIMS\WX.Data.BusinessDataEntitiesAdvance.JXC.TJBB.CGYCG",
+[
+
+]
+)
+|>AdvanceBDFilesGenerator.GenerateCodeFiles 
+|>ObjectDumper.Write
+//--------------------------------------------------------------------------------
+  
+
