@@ -1,5 +1,7 @@
-Intelligent information management system for small business
-===
+# Intelligent information management system for small business
+
+
+
 
 * PayPal donate
 
@@ -14,3 +16,13 @@ Intelligent information management system for small business
 
 
 _Thank you!_
+
+
+
+# Show 
+
+![](SBIIMS_01.jpg)
+
+![](SBIIMS_02.jpg)
+
+![](SBIIMS_03.jpg)
