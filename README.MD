@@ -1,4 +1,4 @@
-# Intelligent information management system for small business
+# Intelligent information management system for small business (More than 1 million lines of code with F#)
 
 
 
