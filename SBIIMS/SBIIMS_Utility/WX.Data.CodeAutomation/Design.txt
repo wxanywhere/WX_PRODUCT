@@ -1,0 +1,5 @@
+﻿//DA_SBIIMS_JXC.fs 数据访问可以再次进行拆分，由于该文件较大，导致调试代价较大
+可以查分为
+DA_SBIIMS_JXC.MDB. fs //Main-Detal table	主子表
+DA_SBIIMS_JXC.DLB.fs //Independent table 独立表
+为配合代码文件拆分，自动化编程文件也可随之进行拆分，以提高代码编辑的效率
